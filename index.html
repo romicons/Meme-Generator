@@ -4,22 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9096056511.js" crossorigin="anonymous"></script>
     <title>Meme generator</title>
 </head>
 <body>
     <header>
         <h1>Generador de Memes</h1>
         <div class="wrapper">
-            <button>Modo oscuro</button>
+            <button id="btn-darkmode">
+                <i class="fa-solid fa-lightbulb darkmode-icon"></i>
+                Modo oscuro
+            </button>
         </div>
     </header>
     <main>
         <div class="wrapper">
-            <div class="canvas">
-                <img src="" alt="" aria-label="Imagen de meme">
-                <button>Descargar Imagen</button>
+            <div id="canvas">
+                <img src="" alt="" aria-label="Imagen de meme" id="img-container">
             </div>
+            <button id="btn-download">
+                <i class="fa-solid fa-download title-icon"></i>
+                Descargar Meme
+            </button>
         </div>
+        <aside class="left">
+            <h2 class="menu-title">
+                <i class="fa-regular fa-image title-icon"></i>
+                Edita tu imagen
+            </h2>
+            <div class="wrapper-menu">
+                <p></p>
+            </div>
+        </aside>
+        <aside class="right">
+            <h2 class="menu-title">
+                <i class="fa-solid fa-font title-icon"></i>
+                Edita tu texto
+            </h2>
+            <div class="wrapper-menu">
+
+            </div>
+        </aside>
     </main>
 </body>
 <script src="index.js" type="text/Javascript"></script>
