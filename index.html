@@ -30,16 +30,24 @@
         <aside class="left">
             <h2 class="menu-title">
                 <i class="fa-regular fa-image title-icon"></i>
-                Edita tu imagen
+                IMAGEN
             </h2>
             <div class="wrapper-menu">
-                <p></p>
+                <form id="img-menu" method="post" enctype="multipart/form-data">
+                    <div class="one_input">
+                      <label for="img_upload"><i class="fa-solid fa-upload"></i></label>
+                      <input type="file" id="upload-meme-img" name="img_upload" accept=".jpg, .jpeg, .png" />
+                    </div>
+                    <div class="alert-text">
+                      <p>Inserta tu imagen para comenzar.</p>
+                    </div>
+                </form>
             </div>
         </aside>
         <aside class="right">
             <h2 class="menu-title">
                 <i class="fa-solid fa-font title-icon"></i>
-                Edita tu texto
+                TEXTO
             </h2>
             <div class="wrapper-menu">
 

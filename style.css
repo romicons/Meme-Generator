@@ -4,7 +4,8 @@
     --clr-primary: #cad1c3;
     --clr-secondary: #51425f;
     --clr-accent: #948e99;
-    --clr-menu: #c8d5a5;
+    --bgc-menu: linear-gradient(to bottom,  #e7eed0, #cad1c3, #f5f5f5);
+    --box-shadow: #021E23 0px 1px 4px;
 
     --foreground: var(--clr-secondary);
     --background: var(--clr-primary);
@@ -52,6 +53,7 @@ header {
     flex-flow: column wrap;
     background-color: var(--clr-dark);
     gap: 0.5em;
+    box-shadow: var(--box-shadow);
 }
 
 h1 {
@@ -68,7 +70,8 @@ h1, h2 {
 aside {
     width: 20%;
     height: 100%;
-    background-color: var(--clr-menu);
+    background: var(--bgc-menu);
+    box-shadow: #021E23 0px 1px 4px;
 }
 
 button {
@@ -101,7 +104,7 @@ a {
     --clr-primary: #51425f;
     --clr-secondary: #cad1c3;
     --clr-accent: #948e99;
-    --clr-menu: #57355a;
+    --bgc-menu: linear-gradient(to bottom, #51425f, #2e1437, #021E23);
 
     --foreground: var(--clr-secondary);
     --background: var(--clr-primary);
@@ -168,4 +171,77 @@ a {
     border-radius: 5px;
     background-color: var(--clr-light);
     color: var(--clr-dark);
+    box-shadow: var(--box-shadow);
+    border: none;
+    cursor: pointer;
 }
+
+#btn-download:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
+}
+
+/* MEME CONTAINER */
+
+#img-menu {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#img-menu div > p {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+#canvas img {
+    max-width: 60%;
+    max-height: 500px;
+    background-color: black;
+}
+
+#img-menu p {
+    line-height: 1rem;
+    text-align: center;
+  }
+
+#img-menu label, #img-menu button {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    box-shadow: var(--box-shadow);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+#upload-meme-img {
+    width: 6rem;
+}
+
+.one_input {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 2.5em;
+    margin: 0 auto;
+}
+
+#img-menu .one_input label {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+}
+
+#img-menu label:hover, #img-menu button:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
+  }
+
+#img-menu label:active, #img-menu button:active {
+    background-color:var(--clr-accent);
+    color: var(--clr-light);
+  }
