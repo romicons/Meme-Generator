@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="img/favicon.ico"/>
     <script src="https://kit.fontawesome.com/9096056511.js" crossorigin="anonymous"></script>
-    <title>Meme generator</title>
+    <title>Generador de memes</title>
 </head>
 <body>
     <header>
@@ -18,15 +19,17 @@
         </div>
     </header>
     <main>
-        <div class="wrapper">
-            <div id="canvas">
-                <img src="" alt="" aria-label="Imagen de meme" id="img-container">
-            </div>
+        <div id="canvas">
+                <p id="top-txt" class="meme-txt">TEXTO-SUPERIOR</p>
+                <img src="img/cheems-placeholder.jpeg" alt="" aria-label="Imagen de meme" id="img-container">
+                <p id="bottom-txt" class="meme-txt">TEXTO-INFERIOR</p>
+        </div>
+        <div>
             <button id="btn-download">
                 <i class="fa-solid fa-download title-icon"></i>
-                Descargar Meme
+                    Descargar Meme
             </button>
-        </div>
+         </div>
         <aside class="left">
             <h2 class="menu-title">
                 <i class="fa-regular fa-image title-icon"></i>
@@ -36,7 +39,7 @@
                 <form id="img-menu" method="post" enctype="multipart/form-data">
                     <div class="one_input">
                       <label for="img_upload"><i class="fa-solid fa-upload"></i></label>
-                      <input type="file" id="upload-meme-img" name="img_upload" accept=".jpg, .jpeg, .png" />
+                      <input type="file" id="upload-meme-img" name="img_upload" accept=".jpg, .jpeg, .png" required/>
                     </div>
                     <div class="alert-text">
                       <p>Inserta tu imagen para comenzar.</p>
