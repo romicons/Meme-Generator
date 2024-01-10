@@ -6,9 +6,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="img/favicon.ico"/>
     <script src="https://kit.fontawesome.com/9096056511.js" crossorigin="anonymous"></script>
-    <title>Generador de memes</title>
+    <title>Generador de Memes</title>
 </head>
 <body>
+
+        <!------TITLE AND NAV BUTTONS------>
+
     <header>
         <h1>Generador de Memes</h1>
         <div class="wrapper">
@@ -19,6 +22,9 @@
         </div>
     </header>
     <main>
+
+        <!------CANVAS: IMAGE CONTAINER------>
+
         <div id="canvas">
                 <p id="top-txt" class="meme-txt">TEXTO-SUPERIOR</p>
                 <img src="img/cheems-placeholder.jpeg" alt="" aria-label="Imagen de meme" id="img-container">
@@ -30,27 +36,106 @@
                     Descargar Meme
             </button>
          </div>
+
+        <!------IMAGE EDITOR MENU------>
+
         <aside class="left">
             <h2 class="menu-title">
                 <i class="fa-regular fa-image title-icon"></i>
-                IMAGEN
+                Imagen
             </h2>
+
+            <!------IMAGE UPLOAD SECTION------>
+
             <div class="wrapper-menu">
                 <form id="img-menu" method="post" enctype="multipart/form-data">
-                    <div class="one_input">
-                      <label for="img_upload"><i class="fa-solid fa-upload"></i></label>
+                    <div class="one-input">
+                      <label for="img_upload" id="btn-img-upload"><i class="fa-solid fa-upload"></i></label>
                       <input type="file" id="upload-meme-img" name="img_upload" accept=".jpg, .jpeg, .png" required/>
                     </div>
                     <div class="alert-text">
                       <p>Inserta tu imagen para comenzar.</p>
                     </div>
+
+            <!------IMAGE BACKGROUND EDITOR------>
+
+                    <div class="section-menu">
+                        <h3>FONDO</h3>
+                        <div class="control-panels">
+                            <div class="two-inputs">
+                                <div class="background-color-option">
+                                    <label for="color" class="color-select">
+                                        <input type="color" id="blend-mode-bgc" value="#FFFFFF" aria-label="Color de fondo de imagen.">
+                                        <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+                                    </label>
+                                </div>
+                                <div class="blend-mode-option">
+                                    <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select">
+                                        <option value="unset">Ninguno</option>
+                                        <option value="lighten">Aclarar</option>
+                                        <option value="darken">Oscurecer</option>
+                                        <option value="difference">Diferencia</option>
+                                        <option value="luminosity">Luminosidad</option>
+                                        <option value="multiply">Multiplicar</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <!------IMAGE FILTERS EDITOR------>
+
+                    <div class="section-menu">
+                        <h3>FILTROS</h3>
+                        <div class="one-input">
+                            <label for="brightness-slider" class="input-name">BRILLO</label>
+                            <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                        </div>
+                        <div class="one-input">
+                            <label for="opacity-slider" class="input-name">OPACIDAD</label>
+                            <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1">
+                        </div>
+                        <div class="one-input">
+                            <label for="contrast-slider" class="input-name">CONTRASTE</label>
+                            <input type="range" id="contrast-slider" min="100%" max="1000%" value="100%" step="1%">
+                        </div>
+                        <div class="one-input">
+                            <label for="blur-slider" class="input-name">DESENFOQUE</label>
+                            <input type="range" id="blur-slider" min="0%" max="10px" value="0px" step="0.1px">
+                        </div>
+                        <div class="one-input">
+                            <label for="grayscale-slider" class="input-name">ESCALA DE GRISES</label>
+                            <input type="range" id="grayscale-slider" min="0%" max="100%" value="0%" step="1%">
+                        </div>
+                        <div class="one-input">
+                            <label for="sepia-slider" class="input-name">SEPIA</label>
+                            <input type="range" id="sepia-slider" min="0%" max="100%" value="0%" step="1%">
+                        </div>
+                        <div class="one-input">
+                            <label for="hue-slider" class="input-name">HUE</label>
+                            <input type="range" id="hue-slider" min="0deg" max="359deg" value="0deg" step="1deg">
+                        </div>
+                        <div class="one-input">
+                            <label for="saturate-slider" class="input-name">SATURADO</label>
+                            <input type="range" id="saturate-slider" min="100%" max="1000%" value="100%" step="10%">
+                        </div>
+                        <div class="one-input">
+                            <label for="invert-slider" class="input-name">NEGATIVO</label>
+                            <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1">
+                        </div>
+                    </div>
+                    <button id="btn-default-filters">Reestablecer filtros</button>
+
                 </form>
             </div>
         </aside>
+
+        <!------TEXT EDITOR MENU------>
+
         <aside class="right">
             <h2 class="menu-title">
                 <i class="fa-solid fa-font title-icon"></i>
-                TEXTO
+                Texto
             </h2>
             <div class="wrapper-menu">
 
