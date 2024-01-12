@@ -33,7 +33,6 @@ darkModeToggle.addEventListener('click', () => {
 
 // FUNCTION TO UPLOAD AN IMAGE
 
-const currentFile = fileImg.files[0];
 let noImg = document.createElement("p")
 let txtInvalidFile = document.createElement("p");
 
@@ -52,6 +51,8 @@ const updateImageDisplay = () => {
   while (errorTxt.firstChild) {
       errorTxt.removeChild(errorTxt.firstChild);
 };
+
+const currentFile = fileImg.files[0];
 
   if (!currentFile) {
       noImg.textContent = "No has cargado ninguna imagen.";
