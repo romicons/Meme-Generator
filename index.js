@@ -86,13 +86,14 @@ const validLinks = [
 ];
 
 const imgUrlInput = document.getElementById("url-img-input");
-const imgUrl = imgUrlInput.value;
 
 const validUrl = (url) => {
   return validLinks.some(regex => regex.test(url));
 }
 
 const imgFromUrl = () => {
+  let imgUrl = imgUrlInput.value;
+
   if (imgUrl === "") {
       noImg.textContent = "No has ingresado ninguna URL.";
       noImg.style.color = "red";
