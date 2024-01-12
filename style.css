@@ -310,7 +310,7 @@ a {
     max-height: 80%;
     background-color: black;
     margin: 0 auto;
-    object-fit: scale-down;
+    object-fit: cover;
 }
 
 #btn-download {
