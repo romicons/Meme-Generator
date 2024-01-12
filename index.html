@@ -15,7 +15,7 @@
     <header>
         <h1>Generador de Memes</h1>
         <div class="wrapper">
-            <button id="btn-darkmode">
+            <button id="btn-darkmode" type="button">
                 <i class="fa-solid fa-lightbulb darkmode-icon"></i>
                 Modo oscuro
             </button>
@@ -31,7 +31,7 @@
                 <p id="bottom-txt" class="meme-txt">TEXTO-INFERIOR</p>
         </div>
         <div>
-            <button id="btn-download">
+            <button id="btn-download" type="button">
                 <i class="fa-solid fa-download title-icon"></i>
                     Descargar Meme
             </button>
@@ -49,27 +49,31 @@
 
             <div class="wrapper-menu">
                 <form id="img-menu" method="post" enctype="multipart/form-data">
-                    <div class="one-input">
-                      <label for="img_upload" id="btn-img-upload"><i class="fa-solid fa-upload"></i></label>
-                      <input type="file" id="upload-meme-img" name="img_upload" accept=".jpg, .jpeg, .png" required/>
+                    <div class="two-inputs">
+                        <div class="col-1">
+                            <input type="text" id="url-img-input" aria-label="URL de imagen" placeholder="Ingresa una URL" value="">
+                        </div>
+                        <div class="col-2">
+                            <label for="img_upload" id="btn-img-upload"><i class="fa-solid fa-upload"></i></label>
+                            <input type="file" id="upload-meme-img" name="img_upload" aria-label="Subir una imagen" accept=".jpg, .jpeg, .png" />
+                        </div>
                     </div>
                     <div class="alert-text">
-                      <p>Inserta tu imagen para comenzar.</p>
-                    </div>
+                        <p>AÑADE TU IMAGEN PARA COMENZAR</p>
+                     </div>
 
             <!------IMAGE BACKGROUND EDITOR------>
 
                     <div class="section-menu">
                         <h3>FONDO</h3>
-                        <div class="control-panels">
                             <div class="two-inputs">
-                                <div class="background-color-option">
+                                <div class="col-2">
                                     <label for="color" class="color-select">
                                         <input type="color" id="blend-mode-bgc" value="#FFFFFF" aria-label="Color de fondo de imagen.">
                                         <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
                                     </label>
                                 </div>
-                                <div class="blend-mode-option">
+                                <div class="col-1">
                                     <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select">
                                         <option value="unset">Ninguno</option>
                                         <option value="lighten">Aclarar</option>
@@ -80,7 +84,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
                     </div>
 
             <!------IMAGE FILTERS EDITOR------>
@@ -124,7 +127,7 @@
                             <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1">
                         </div>
                     </div>
-                    <button id="btn-default-filters">Reestablecer filtros</button>
+                    <button id="btn-default-filters" type="button">Reestablecer filtros</button>
 
                 </form>
             </div>

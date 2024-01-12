@@ -2,6 +2,7 @@
 
 const uploadImg = document.querySelector("#upload-meme-img");
 const fileImg = document.querySelector('input[type="file"][name="img_upload"]');
+const existingImage = document.getElementById("img-container");
 const errorTxt = document.querySelector(".alert-text");
 const imgMemeContainer = document.querySelector("#canvas");
 
@@ -14,7 +15,6 @@ const enableDarkMode = () => {
   document.body.classList.add('darkmode');
   localStorage.setItem('darkMode', true);
 }
-
 
 const disableDarkMode = () => {
   document.body.classList.remove('darkmode');
@@ -31,7 +31,11 @@ darkModeToggle.addEventListener('click', () => {
 }
 });
 
-// FUNCTION TO UPLOAD THE IMAGE
+// FUNCTION TO UPLOAD AN IMAGE
+
+const currentFile = fileImg.files[0];
+const noImg = document.createElement("p")
+const txtInvalidFile = document.createElement("p");
 
 const fileTypes = [
   "image/apng",
@@ -42,43 +46,73 @@ const fileTypes = [
 
 const validFileType = (file) => {
   return fileTypes.includes(file.type);
-}
-
-uploadImg.style.opacity = 0;
+};
 
 const updateImageDisplay = () => {
   while (errorTxt.firstChild) {
       errorTxt.removeChild(errorTxt.firstChild);
-  }
-
-  const currentFile = fileImg.files[0];
+};
 
   if (!currentFile) {
-      const noImg = document.createElement("p");
       noImg.textContent = "No has cargado ninguna imagen.";
       noImg.style.color = "red";
       errorTxt.appendChild(noImg);
   } else {
       if (validFileType(currentFile)) {
-          const existingImage = document.getElementById("img-container");
           if (existingImage) {
               existingImage.src = URL.createObjectURL(currentFile);
           } else {
-              const txtInvalidFile = document.createElement("p");
               txtInvalidFile.textContent = "No se encontró ninguna imagen. Por favor, intente nuevamente.";
               txtInvalidFile.style.color = "red";
               errorTxt.appendChild(txtInvalidFile);
           }
       } else {
-          const txtInvalidFile = document.createElement("p");
-          txtInvalidFile.textContent = `${currentFile.name}: No es un archivo válido. Por favor, elige un archivo válido.`;
+          txtInvalidFile.textContent = `${currentFile.name}: No es un archivo válido. Por favor, intente nuevamente.`;
           txtInvalidFile.style.color = "red";
           errorTxt.appendChild(txtInvalidFile);
       }
   }
 };
 
+//FUNCTION TO USE AN IMAGE FROM AN URL
+
+const validLinks = [
+  /^(https:\/\/|data:image\/.*)(\.jpg|\.png)?$/,
+  /^data:image\/png/,
+  /^data:image\/jpeg/,
+  /^data:image\/apng/,
+  /^data:image\/ajpeg/
+];
+
+const imgUrlInput = document.getElementById("url-img-input");
+const imgUrl = imgUrlInput.value;
+
+const validUrl = (url) => {
+  return validLinks.some(regex => regex.test(url));
+}
+
+const imgFromUrl = () => {
+  if (imgUrl === "") {
+      noImg.textContent = "No has ingresado ninguna URL.";
+      noImg.style.color = "red";
+      errorTxt.appendChild(noImg);
+  } else {
+        if (validUrl(imgUrl)) {
+          existingImage.src = imgUrl;
+        } else {
+          txtInvalidFile.textContent = `El link ingresado no es válido. Por favor, intente nuevamente.`;
+          txtInvalidFile.style.color = "red";
+          errorTxt.appendChild(txtInvalidFile);
+        }
+    }
+};
 
 // EVENT LISTENER
 
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+  }
+});
+
 uploadImg.addEventListener("change", updateImageDisplay);
+imgUrlInput.addEventListener("input", imgFromUrl);
