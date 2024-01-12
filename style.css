@@ -324,6 +324,10 @@ a {
     box-shadow: var(--box-shadow);
 }
 
+#btn-download:focus {
+    border: 2px solid var(--clr-dark);
+}
+
     /* IMAGE EDITOR MENU*/
 
 .left {
@@ -350,6 +354,7 @@ a {
     opacity: 0;
     cursor: pointer;
 }
+
 #btn-img-upload {
     width: 100%;
     height: 2.2rem;
@@ -368,6 +373,10 @@ a {
     color: var(--clr-light); 
 } 
 
+#btn-img-upload:focus {
+    border: 2px solid var(--clr-dark);
+}
+
 #url-img-input {
     width: 100%;
 }
@@ -381,7 +390,6 @@ a {
     width: 3em;
     background-color: transparent;
     clip-path: circle(28%);
-    cursor: pointer;
 }
 
 .color-select {
@@ -393,6 +401,11 @@ a {
     border-radius: var(--border-radius);
     padding-right: 0.5rem;
     box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.color-select:hover {
+    background-color: var(--clr-accent);
 }
 
 .panel-control-select {
@@ -414,6 +427,9 @@ a {
     padding: 0.5rem; 
 }
 
+#btn-default-filters:focus {
+    border: 2px solid var(--clr-dark);
+}
     /* TEXT EDITOR MENU*/
 
 .right {

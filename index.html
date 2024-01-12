@@ -15,7 +15,7 @@
     <header>
         <h1>Generador de Memes</h1>
         <div class="wrapper">
-            <button id="btn-darkmode" type="button">
+            <button id="btn-darkmode" type="button" tabindex="0">
                 <i class="fa-solid fa-lightbulb darkmode-icon"></i>
                 Modo oscuro
             </button>
@@ -31,7 +31,7 @@
                 <p id="bottom-txt" class="meme-txt">TEXTO-INFERIOR</p>
         </div>
         <div>
-            <button id="btn-download" type="button">
+            <button id="btn-download" type="button" tabindex="1">
                 <i class="fa-solid fa-download title-icon"></i>
                     Descargar Meme
             </button>
@@ -51,10 +51,10 @@
                 <form id="img-menu" method="post" enctype="multipart/form-data">
                     <div class="two-inputs">
                         <div class="col-1">
-                            <input type="text" id="url-img-input" aria-label="URL de imagen" placeholder="Ingresa una URL" value="">
+                            <input type="text" id="url-img-input" aria-label="URL de imagen" placeholder="Ingresa una URL" value="" tabindex="2">
                         </div>
                         <div class="col-2">
-                            <label for="upload-meme-img" id="btn-img-upload"><i class="fa-solid fa-upload"></i></label>
+                            <label for="upload-meme-img" id="btn-img-upload" tabindex="3"><i class="fa-solid fa-upload"></i></label>
                             <input type="file" id="upload-meme-img" name="img_upload" aria-label="Subir una imagen" accept=".jpg, .jpeg, .png" />
                         </div>
                     </div>
@@ -68,13 +68,13 @@
                         <h3>FONDO</h3>
                             <div class="two-inputs">
                                 <div class="col-2">
-                                    <label for="blend-mode-bgc" class="color-select">
+                                    <label for="blend-mode-bgc" class="color-select" tabindex="4">
                                         <input type="color" id="blend-mode-bgc" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen.">
                                         <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
                                     </label>
                                 </div>
                                 <div class="col-1">
-                                    <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select">
+                                    <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="5">
                                         <option value="unset">Ninguno</option>
                                         <option value="lighten">Aclarar</option>
                                         <option value="darken">Oscurecer</option>
@@ -92,42 +92,42 @@
                         <h3>FILTROS</h3>
                         <div class="one-input">
                             <label for="brightness-slider" class="input-name">BRILLO</label>
-                            <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+                            <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="6">
                         </div>
                         <div class="one-input">
                             <label for="opacity-slider" class="input-name">OPACIDAD</label>
-                            <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1">
+                            <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="7">
                         </div>
                         <div class="one-input">
                             <label for="contrast-slider" class="input-name">CONTRASTE</label>
-                            <input type="range" id="contrast-slider" min="100%" max="1000%" value="100%" step="1%">
+                            <input type="range" id="contrast-slider" min="100%" max="1000%" value="100%" step="1%" tabindex="8">
                         </div>
                         <div class="one-input">
                             <label for="blur-slider" class="input-name">DESENFOQUE</label>
-                            <input type="range" id="blur-slider" min="0%" max="10px" value="0px" step="0.1px">
+                            <input type="range" id="blur-slider" min="0%" max="10px" value="0px" step="0.1px" tabindex="9">
                         </div>
                         <div class="one-input">
                             <label for="grayscale-slider" class="input-name">ESCALA DE GRISES</label>
-                            <input type="range" id="grayscale-slider" min="0%" max="100%" value="0%" step="1%">
+                            <input type="range" id="grayscale-slider" min="0%" max="100%" value="0%" step="1%" tabindex="10">
                         </div>
                         <div class="one-input">
                             <label for="sepia-slider" class="input-name">SEPIA</label>
-                            <input type="range" id="sepia-slider" min="0%" max="100%" value="0%" step="1%">
+                            <input type="range" id="sepia-slider" min="0%" max="100%" value="0%" step="1%" tabindex="11">
                         </div>
                         <div class="one-input">
                             <label for="hue-slider" class="input-name">HUE</label>
-                            <input type="range" id="hue-slider" min="0deg" max="359deg" value="0deg" step="1deg">
+                            <input type="range" id="hue-slider" min="0deg" max="359deg" value="0deg" step="1deg" tabindex="12">
                         </div>
                         <div class="one-input">
                             <label for="saturate-slider" class="input-name">SATURADO</label>
-                            <input type="range" id="saturate-slider" min="100%" max="1000%" value="100%" step="10%">
+                            <input type="range" id="saturate-slider" min="100%" max="1000%" value="100%" step="10%" tabindex="13">
                         </div>
                         <div class="one-input">
                             <label for="invert-slider" class="input-name">NEGATIVO</label>
-                            <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1">
+                            <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1" tabindex="14">
                         </div>
                     </div>
-                    <button id="btn-default-filters" type="button">Reestablecer filtros</button>
+                    <button id="btn-default-filters" type="button" tabindex="15">Reestablecer filtros</button>
 
                 </form>
             </div>
