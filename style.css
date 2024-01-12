@@ -378,7 +378,7 @@ a {
 }
 
 #blend-mode-bgc {
-    width: 3rem;
+    width: 3em;
     background-color: transparent;
     clip-path: circle(28%);
     cursor: pointer;

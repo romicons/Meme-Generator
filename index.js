@@ -34,8 +34,8 @@ darkModeToggle.addEventListener('click', () => {
 // FUNCTION TO UPLOAD AN IMAGE
 
 const currentFile = fileImg.files[0];
-const noImg = document.createElement("p")
-const txtInvalidFile = document.createElement("p");
+let noImg = document.createElement("p")
+let txtInvalidFile = document.createElement("p");
 
 const fileTypes = [
   "image/apng",
@@ -77,7 +77,7 @@ const updateImageDisplay = () => {
 //FUNCTION TO USE AN IMAGE FROM AN URL
 
 const validLinks = [
-  /^(https:\/\/|data:image\/.*)(\.jpg|\.png)?$/,
+  /^(https:\/\/.*)(\.jpg|\.png)?$/,
   /^data:image\/png/,
   /^data:image\/jpeg/,
   /^data:image\/apng/,
