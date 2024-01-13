@@ -90,7 +90,8 @@ h1 {
 }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    margin: 0 auto;
 }
 
 h3 {
@@ -214,10 +215,11 @@ a {
 
 /* DESIGN STYLES*/
 
-.menu-title {
+.title-section {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
     padding: 0.5em;
     gap: 0.5em;
 }
@@ -287,6 +289,11 @@ a {
 
 .input-name {
     height: 1.5em;
+}
+
+.close-window {
+    width: 10%;
+    display: none;
 }
 
     /* NAV BUTTONS */
