@@ -8,7 +8,7 @@ const imgMemeContainer = document.querySelector("#canvas");
 
 // FUNCTION DARK/LIGHT MODE
 
-let darkMode = localStorage.getItem('darkMode');
+let darkMode = localStorage.getItem('darkMode') === 'true';
 const darkModeToggle = document.querySelector('#btn-darkmode');
 
 const enableDarkMode = () => {
@@ -22,13 +22,12 @@ const disableDarkMode = () => {
 }
 
 darkModeToggle.addEventListener('click', () => {
-  darkMode = JSON.parse(localStorage.getItem('darkMode'));
-
-  if (!darkMode) {
-      enableDarkMode();
-  } else {  
-      disableDarkMode(); 
-}
+  darkMode = !darkMode; 
+  if (darkMode) {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
 });
 
 // FUNCTION TO UPLOAD AN IMAGE
