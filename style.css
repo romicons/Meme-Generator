@@ -55,14 +55,24 @@ body {
 
 header {
     width: 50%;
-    height: 8em;
+    height: 20%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-flow: column wrap;
     background-color: var(--clr-dark);
-    gap: 0.5em;
     box-shadow: var(--box-shadow);
+    gap: 1rem;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding-block: 0.5rem;
 }
 
 main {
@@ -75,7 +85,8 @@ main {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    padding-top: 1rem;
 }
 
 h2 {
@@ -201,29 +212,6 @@ a {
     --background: var(--clr-primary);
 }
 
-#btn-darkmode {
-    width: 9rem;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    color: var(--clr-light);
-    box-shadow: none;
-}
-
-#btn-darkmode:hover {
-    background-color: var(--clr-primary);
-}
-
-#btn-darkmode:active {
-    background-color: var(--clr-primary);
-}
-
-.darkmode-icon {
-    width: 1.5rem;
-}
-
 /* DESIGN STYLES*/
 
 .menu-title {
@@ -240,6 +228,25 @@ a {
 
 .title-icon {
     width: 2.2rem;
+}
+
+.custom-btn {
+    width: 9rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--clr-light);
+    box-shadow: none;
+}
+
+.custom-btn:hover, #btn-darkmode:active {
+    background-color: var(--clr-primary);
+}
+
+.btn-icon {
+    width: 1.5rem;
 }
 
 .one-input {
@@ -282,6 +289,12 @@ a {
     height: 1.5em;
 }
 
+    /* NAV BUTTONS */
+
+#btn-img-menu, #btn-text-menu {
+    display: none;
+}
+
     /* MEME CONTAINER */
 
 #canvas {
@@ -289,7 +302,7 @@ a {
     flex-flow: row wrap;
     align-items: center;
     width: 30em;
-    height: 30em;
+    height: 28em;
     background-color: white;
     margin: 0 auto;
     box-shadow: var(--box-shadow);
@@ -368,7 +381,7 @@ a {
     position: absolute;
 }
 
-#btn-img-upload:hover, #btn-img-upload:active  {
+#btn-img-upload:hover, #btn-img-upload:active {
     background-color: var(--clr-accent);
     color: var(--clr-light); 
 } 

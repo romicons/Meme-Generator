@@ -91,7 +91,8 @@ const validUrl = (url) => {
   return validLinks.some(regex => regex.test(url));
 }
 
-const imgFromUrl = () => {
+const imgFromUrl = (event) => {
+  event.preventDefault()
   let imgUrl = imgUrlInput.value;
 
   if (imgUrl === "") {
