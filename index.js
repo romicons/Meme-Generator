@@ -1,10 +1,8 @@
 // DOM ELEMENTS
 
-const uploadImg = document.querySelector("#upload-meme-img");
-const fileImg = document.querySelector('input[type="file"][name="img_upload"]');
-const existingImage = document.getElementById("img-container");
-const errorTxt = document.querySelector(".alert-text");
 const imgMemeContainer = document.querySelector("#canvas");
+const btnImgMenu = document.getElementById("btn-img-menu");
+const btnTextMenu = document.getElementById("btn-text-menu");
 
 // FUNCTION DARK/LIGHT MODE
 
@@ -31,6 +29,11 @@ darkModeToggle.addEventListener('click', () => {
 });
 
 // FUNCTION TO UPLOAD AN IMAGE
+
+const uploadImg = document.querySelector("#upload-meme-img");
+const fileImg = document.querySelector('input[type="file"][name="img_upload"]');
+const existingImage = document.getElementById("img-container");
+const errorTxt = document.querySelector(".alert-text");
 
 let noImg = document.createElement("p")
 let txtInvalidFile = document.createElement("p");

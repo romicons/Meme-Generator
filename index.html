@@ -34,9 +34,25 @@
 
     <main>
 
+        <!------CANVAS: IMAGE CONTAINER------>
+
+        <div class="edit-download-wrapper">
+            <div id="canvas">
+                    <p id="top-txt" class="meme-txt">TEXTO-SUPERIOR</p>
+                    <img src="img/cheems-placeholder.jpeg" alt="" aria-label="Imagen de meme" id="img-container">
+                    <p id="bottom-txt" class="meme-txt">TEXTO-INFERIOR</p>
+            </div>
+            <div class="btn-container">
+                <button id="btn-download" type="button" tabindex="3">
+                    <i class="fa-solid fa-download title-icon"></i>
+                        Descargar Meme
+                </button>
+            </div>
+        </div>
+
         <!------IMAGE EDITOR MENU------>
 
-        <aside class="left">
+        <aside class="img-editor-menu">
             <div class="title-section">
                 <h2>
                     <i class="fa-regular fa-image title-icon"></i>
@@ -135,26 +151,11 @@
 
                 </form>
             </div>
-        </aside>
-
-        <!------CANVAS: IMAGE CONTAINER------>
-        <div class="edit-download-wrapper">
-            <div id="canvas">
-                    <p id="top-txt" class="meme-txt">TEXTO-SUPERIOR</p>
-                    <img src="img/cheems-placeholder.jpeg" alt="" aria-label="Imagen de meme" id="img-container">
-                    <p id="bottom-txt" class="meme-txt">TEXTO-INFERIOR</p>
-            </div>
-            <div class="btn-container">
-                <button id="btn-download" type="button" tabindex="3">
-                    <i class="fa-solid fa-download title-icon"></i>
-                        Descargar Meme
-                </button>
-            </div>
-        </div>
+        </aside>        
 
         <!------TEXT EDITOR MENU------>
 
-        <aside class="right">
+        <aside id="text-editor-menu">
             <div class="title-section">
                 <h2>
                     <i class="fa-solid fa-font title-icon"></i>
