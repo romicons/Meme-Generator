@@ -111,10 +111,5 @@ const imgFromUrl = (event) => {
 
 // EVENT LISTENER
 
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-  }
-});
-
 uploadImg.addEventListener("change", updateImageDisplay);
 imgUrlInput.addEventListener("input", imgFromUrl);

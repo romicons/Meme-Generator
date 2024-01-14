@@ -7,7 +7,6 @@
     --bgc-menu: linear-gradient(to bottom,  #e7eed0, #cad1c3, #f5f5f5);
     --box-shadow: #021E23 0px 1px 4px;
     --border-radius: 5px;
-
     --clr-meme: var(--clr-light);
     --clr-bgc-meme: white;
     --fs-meme: 2rem;
@@ -55,14 +54,14 @@ body {
 
 header {
     width: 50%;
-    height: 20%;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-flow: column wrap;
     background-color: var(--clr-dark);
     box-shadow: var(--box-shadow);
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 nav {
@@ -72,7 +71,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 0.5em;
-    padding-block: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 main {
@@ -80,13 +79,20 @@ main {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    padding-top: 1em;
-    gap: 1em;
+    padding-block: 1em;
+}
+
+footer {
+    height: 10%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: end;
+    margin: 0 auto;
 }
 
 h1 {
     font-size: 3rem;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
 }
 
 h2 {
@@ -95,8 +101,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
-    padding-bottom: 0.2rem;
+    font-size: 1.2rem;
+    padding-bottom: 0.3rem;
 }
 
 h1, h2, h3 {
@@ -106,6 +112,9 @@ h1, h2, h3 {
 }
 
 aside {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: column wrap;
     width: 25%;
     height: 100%;
     background: var(--bgc-menu);
@@ -143,33 +152,6 @@ select:hover, select:active {
     background-color: var(--clr-accent);
 }
 
-input {
-    font-family: "AdventPro";
-}
-
-input::placeholder {
-    text-align: center;
-    font-weight: bold;
-}
-
-input[type="text"] {
-    border-radius: var(--border-radius);
-    background-color: var(--clr-primary);
-    color: var(--clr-light);
-    box-shadow: var(--box-shadow);
-    height: 2.2rem;
-}
-
-input[type="text"]:hover, input[type="text"]:active {
-    background-color: var(--clr-accent);
-}
-
-input[type="text"]:focus {
-    font-weight: bold;
-    background-color: var(--clr-accent);
-    outline: 2px solid var(--clr-light);
-}
-
 input[type="range"] {
     width: 80%;
     appearance: none;
@@ -187,16 +169,77 @@ input[type="range"]::-moz-range-thumb {
     background-color: var(--clr-secondary);
 }
 
-input[type="range"]:focus {
+input[type="range"]:focus, input[type="range"]:active {
     background-color: var(--clr-accent);
 }
-  
-input[type="range"]:active {
+
+input[type="number"] {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    appearance: none;
+    border-radius: var(--border-radius);
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    cursor: pointer;
+    height: 2.2rem;
+    font-family: "AdventPro";
+    text-align: center;
+}
+
+input[type="number"]:hover, input[type="number"]:focus, input[type="number"]:active {
     background-color: var(--clr-accent);
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    width: 1.2rem; 
+    height: 1.2rem; 
+    border: 2px solid var(--clr-secondary); 
+    background-color: var(--clr-primary); 
+    outline: none; 
+    cursor: pointer;
+    border-radius: var(--border-radius);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--clr-accent); 
+    border-color: var(--clr-light);
+}
+
+input[type="checkbox"]::before {
+    content: '\2713'; 
+    display: block;
+    color: #FFFFFF; 
+    text-align: center;
+    line-height: 1rem;
+    font-size: 1rem; 
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before {
+    visibility: visible;
+
+}
+
+input[type="checkbox"]:focus {
+    background-color: var(--clr-accent);
+    outline: 2px solid var(--clr-light);
+}
+
+li {
+    list-style-type: none;
 }
 
 a {
     text-decoration: none;
+}
+
+label {
+    cursor: pointer;
 }
 
 /* DARK MODE STYLE*/
@@ -225,7 +268,7 @@ a {
 }
 
 .section-menu {
-    padding-block: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 .title-icon {
@@ -233,17 +276,16 @@ a {
 }
 
 .custom-btn {
-    width: 9rem;
-    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
     color: var(--clr-light);
+    padding: 0.5rem;
     box-shadow: none;
 }
 
-.custom-btn:hover, #btn-darkmode:active {
+.custom-btn:hover, .custom-btn:active {
     background-color: var(--clr-primary);
 }
 
@@ -251,17 +293,15 @@ a {
     width: 1.5rem;
 }
 
-.one-input {
-    display: flex;
-    flex-flow: column wrap;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    height: 2.5em;
-    margin: 0 auto;
+.btn-container {
+    padding-top: 1rem;
 }
 
-.two-inputs {
+.one-input {
+    position: relative;
+}
+
+.one-input, .two-inputs {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -287,6 +327,35 @@ a {
     justify-content: center;
 }
 
+.col-3 {
+    width: 40%;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.grid-cols-a {
+    display: grid;
+    grid-template-columns: 30% 60%;
+    justify-content: center;
+    gap: 1rem;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    margin: 0 auto;   
+}
+
+.grid-cols-b {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    gap: 1rem;
+    padding-inline: 1rem;
+    margin: 0 auto;
+}
+
+
 .input-name {
     height: 1.5em;
 }
@@ -295,6 +364,78 @@ a {
     width: 10%;
     display: none;
 }
+
+.input-text {
+    border-radius: var(--border-radius);
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    box-shadow: var(--box-shadow);
+    height: 2.2rem;
+    font-family: "AdventPro";
+}
+
+.input-text::placeholder {
+    text-align: center;
+    font-weight: bold;
+}
+
+.input-text:hover, .input-text:active {
+    background-color: var(--clr-accent);
+}
+
+.input-text:focus {
+    font-weight: bold;
+    background-color: var(--clr-accent);
+    outline: 2px solid var(--clr-light);
+}
+
+.circle-selector {
+    height: 2.4em;
+    background-color: transparent;
+    clip-path: circle(25%);
+}
+
+.color-select {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 2.2em;
+    background-color: var(--clr-primary);
+    border-radius: var(--border-radius);
+    padding-right: 0.5rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.color-select:hover {
+    background-color: var(--clr-accent);
+}
+
+.panel-control-select {
+    width: 100%;
+    height: 2.2em;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--clr-primary);
+    text-align: center;
+    color: var(--clr-light);
+}
+
+.text-container {
+    width: 80%;
+    height: 3em;
+    resize: none;
+}
+
+.remove-option {
+    height: 2em;
+}
+
+.checkbox-container {
+    gap: 0.5rem;
+}
+
 
     /* NAV BUTTONS */
 
@@ -306,10 +447,10 @@ a {
 
 #canvas {
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+    flex-flow: column wrap;
+    justify-content: space-between;
     width: 30em;
-    height: 28em;
+    height: 26em;
     background-color: white;
     margin: 0 auto;
     box-shadow: var(--box-shadow);
@@ -339,13 +480,18 @@ a {
     align-items: center;
     text-align: center;
     width: 12rem;
-    height: 3rem;
     margin: 0 auto;
+    padding: 0.5rem;
     box-shadow: var(--box-shadow);
 }
 
+#btn-download:hover, #btn-download:active {
+    background-color: var(--clr-accent);
+    outline: 2px solid var(--clr-secondary);
+}
+
 #btn-download:focus {
-    border: 2px solid var(--clr-dark);
+    outline: 3px solid var(--clr-accent);
 }
 
     /* IMAGE EDITOR MENU*/
@@ -390,11 +536,11 @@ a {
 
 #btn-img-upload:hover, #btn-img-upload:active {
     background-color: var(--clr-accent);
-    color: var(--clr-light); 
+    outline: 2px solid var(--clr-secondary);
 } 
 
 #btn-img-upload:focus {
-    border: 2px solid var(--clr-dark);
+    outline: 3px solid var(--clr-accent);
 }
 
 #url-img-input {
@@ -406,38 +552,6 @@ a {
     color: var(--clr-light); 
 }
 
-#blend-mode-bgc {
-    width: 3em;
-    background-color: transparent;
-    clip-path: circle(28%);
-}
-
-.color-select {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: var(--clr-primary);
-    border-radius: var(--border-radius);
-    padding-right: 0.5rem;
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-}
-
-.color-select:hover {
-    background-color: var(--clr-accent);
-}
-
-.panel-control-select {
-    width: 100%;
-    height: 2em;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    background-color: var(--clr-primary);
-    text-align: center;
-    color: var(--clr-light);
-}
-
 #btn-default-filters {
     display: flex;
     justify-content: center;
@@ -447,8 +561,13 @@ a {
     padding: 0.5rem; 
 }
 
+#btn-default-filters:hover, #btn-default-filters:active {
+    background-color: var(--clr-accent);
+    outline: 2px solid var(--clr-secondary);
+}
+
 #btn-default-filters:focus {
-    border: 2px solid var(--clr-dark);
+    outline: 3px solid var(--clr-accent);
 }
     /* TEXT EDITOR MENU*/
 
@@ -457,3 +576,43 @@ a {
     right: 0;
     top: 0;
 }
+
+#text-font-family {
+    width: 80%;
+}
+
+.align-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.txt-align:hover {
+    background-color: var(--clr-accent);
+}
+
+    /* FOOTER STYLE*/
+
+.social-networks{
+    padding-bottom: 0.5rem;
+}
+
+.footer-icon {
+    font-size: 1.8rem;
+    color: var(--clr-light);
+    border-radius: var(--border-radius);
+    background-color: var(--clr-primary);
+    padding-block: 0.3rem;
+    padding-inline: 0.5rem;
+}
+
+.footer-icon:hover, .footer-icon:active {
+    background-color: var(--clr-dark);
+    outline: 2px solid var(--clr-secondary);
+}
+
+.design-by {
+    font-size: 1.2rem;
+}
+
+
