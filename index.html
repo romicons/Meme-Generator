@@ -17,15 +17,15 @@
     <header>
         <h1>Generador de Memes</h1>
         <nav>
-            <button id="btn-img-menu" class="custom-btn" type="button" tabindex="0">
+            <button id="btn-img-menu" class="custom-btn" type="button" tabindex="1">
                 <i class="fa-regular fa-image title-icon"></i>
                 Imagen
             </button>
-            <button id="btn-text-menu" class="custom-btn" type="button" tabindex="1">
+            <button id="btn-text-menu" class="custom-btn" type="button" tabindex="2">
                 <i class="fa-solid fa-font title-icon"></i>
                 Texto
             </button>
-            <button id="btn-darkmode" class="custom-btn" type="button" tabindex="2">
+            <button id="btn-darkmode" class="custom-btn" type="button" tabindex="3">
                 <i class="fa-solid fa-lightbulb btn-icon"></i>
                 Modo oscuro
             </button>
@@ -42,7 +42,7 @@
                     <p id="bottom-txt" class="meme-txt">TEXTO-INFERIOR</p>
             </div>
             <div class="btn-container">
-                <button id="btn-download" type="button" tabindex="3">
+                <button id="btn-download" type="button" tabindex="4">
                     <i class="fa-solid fa-download title-icon"></i>
                         Descargar Meme
                 </button>
@@ -58,7 +58,7 @@
                         <i class="fa-regular fa-image title-icon"></i>
                         Imagen
                     </h2>
-                    <button type="button" class="custom-btn close-window" tabindex="18"><i class="fa-solid fa-xmark title-icon"></i></button>
+                    <button type="button" class="custom-btn close-window" tabindex="22"><i class="fa-solid fa-xmark title-icon"></i></button>
                 </div>
     
                 <!------IMAGE UPLOAD SECTION------>
@@ -68,10 +68,10 @@
                         <div class="section-menu">
                             <div class="two-inputs">
                                 <div class="col-1">
-                                    <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL." value="" tabindex="4">
+                                    <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL." value="" tabindex="8">
                                 </div>
                                 <div class="col-2">
-                                    <label for="upload-meme-img" id="btn-img-upload" tabindex="5"><i class="fa-solid fa-upload"></i></label>
+                                    <label for="upload-meme-img" id="btn-img-upload" tabindex="9"><i class="fa-solid fa-upload"></i></label>
                                     <input type="file" id="upload-meme-img" name="img_upload" aria-label="Subir una imagen" accept=".jpg, .jpeg, .png" />
                                 </div>
                             </div>
@@ -86,13 +86,13 @@
                             <h3>FONDO</h3>
                                 <div class="two-inputs">
                                     <div class="col-2">
-                                        <label for="blend-mode-bgc" class="color-select" tabindex="6">
+                                        <label for="blend-mode-bgc" class="color-select" tabindex="10">
                                             <input type="color" id="blend-mode-bgc" class="circle-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen.">
                                             <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
                                         </label>
                                     </div>
                                     <div class="col-1">
-                                        <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="7">
+                                        <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="11">
                                             <option value="unset">Ninguno</option>
                                             <option value="lighten">Aclarar</option>
                                             <option value="darken">Oscurecer</option>
@@ -110,42 +110,42 @@
                             <h3>FILTROS</h3>
                             <div class="one-input">
                                 <label for="brightness-slider" class="input-name">BRILLO</label>
-                                <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="8">
+                                <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="12">
                             </div>
                             <div class="one-input">
                                 <label for="opacity-slider" class="input-name">OPACIDAD</label>
-                                <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="9">
+                                <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="13">
                             </div>
                             <div class="one-input">
                                 <label for="contrast-slider" class="input-name">CONTRASTE</label>
-                                <input type="range" id="contrast-slider" min="100%" max="1000%" value="100%" step="1%" tabindex="10">
+                                <input type="range" id="contrast-slider" min="100%" max="1000%" value="100%" step="1%" tabindex="14">
                             </div>
                             <div class="one-input">
                                 <label for="blur-slider" class="input-name">DESENFOQUE</label>
-                                <input type="range" id="blur-slider" min="0%" max="10px" value="0px" step="0.1px" tabindex="11">
+                                <input type="range" id="blur-slider" min="0%" max="10px" value="0px" step="0.1px" tabindex="15">
                             </div>
                             <div class="one-input">
                                 <label for="grayscale-slider" class="input-name">ESCALA DE GRISES</label>
-                                <input type="range" id="grayscale-slider" min="0%" max="100%" value="0%" step="1%" tabindex="12">
+                                <input type="range" id="grayscale-slider" min="0%" max="100%" value="0%" step="1%" tabindex="16">
                             </div>
                             <div class="one-input">
                                 <label for="sepia-slider" class="input-name">SEPIA</label>
-                                <input type="range" id="sepia-slider" min="0%" max="100%" value="0%" step="1%" tabindex="13">
+                                <input type="range" id="sepia-slider" min="0%" max="100%" value="0%" step="1%" tabindex="17">
                             </div>
                             <div class="one-input">
                                 <label for="hue-slider" class="input-name">HUE</label>
-                                <input type="range" id="hue-slider" min="0deg" max="359deg" value="0deg" step="1deg" tabindex="14">
+                                <input type="range" id="hue-slider" min="0deg" max="359deg" value="0deg" step="1deg" tabindex="18">
                             </div>
                             <div class="one-input">
                                 <label for="saturate-slider" class="input-name">SATURADO</label>
-                                <input type="range" id="saturate-slider" min="100%" max="1000%" value="100%" step="10%" tabindex="15">
+                                <input type="range" id="saturate-slider" min="100%" max="1000%" value="100%" step="10%" tabindex="19">
                             </div>
                             <div class="one-input">
                                 <label for="invert-slider" class="input-name">NEGATIVO</label>
-                                <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1" tabindex="16">
+                                <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1" tabindex="20">
                             </div>
                             <div class="btn-container">
-                                <button id="btn-default-filters" type="button" tabindex="17">Reestablecer filtros</button>
+                                <button id="btn-default-filters" type="button" tabindex="21">Reestablecer filtros</button>
                             </div>
                         </div>
     
@@ -161,7 +161,7 @@
                         <i class="fa-solid fa-font title-icon"></i>
                         Texto
                     </h2>
-                    <button type="button" class="custom-btn close-window" tabindex="36"><i class="fa-solid fa-xmark title-icon"></i></button>
+                    <button type="button" class="custom-btn close-window" tabindex="40"><i class="fa-solid fa-xmark title-icon"></i></button>
                 </div>
                 <div class="wrapper-menu">
                     <form id="txt-menu" method="post" enctype="multipart/form-data">
@@ -173,11 +173,11 @@
                                 <h3>SUPERIOR</h3>
                             </label>
                                 <div class="one-input">
-                                    <textarea aria-label="Texto superior" class="input-text text-container" id="top-text-input" placeholder="Ingresa tu texto aquí." tabindex="19"></textarea>
+                                    <textarea aria-label="Texto superior" class="input-text text-container" id="top-text-input" placeholder="Ingresa tu texto aquí." tabindex="23"></textarea>
                                 </div>
                                 <div class="two-inputs remove-option">
                                     <div class="col-1 checkbox-container">
-                                        <input type="checkbox" id="remove-top-text" tabindex="20">
+                                        <input type="checkbox" id="remove-top-text" tabindex="24">
                                         <label for="remove-top-text">
                                             Quitar texto
                                         </label>
@@ -187,11 +187,11 @@
                                 <h3>INFERIOR</h3>
                             </label>
                                 <div class="one-input">
-                                    <textarea aria-label="Texto inferior" class="input-text text-container" id="bottom-text-input" placeholder="Ingresa tu texto aquí." tabindex="21"></textarea>
+                                    <textarea aria-label="Texto inferior" class="input-text text-container" id="bottom-text-input" placeholder="Ingresa tu texto aquí." tabindex="25"></textarea>
                                 </div>
                                 <div class="two-inputs">
                                     <div class="col-1 checkbox-container">
-                                        <input type="checkbox" id="remove-bottom-text" tabindex="22">
+                                        <input type="checkbox" id="remove-bottom-text" tabindex="26">
                                         <label for="remove-bottom-text">
                                             Quitar texto
                                         </label>
@@ -206,7 +206,7 @@
                                 <h3>FUENTE</h3>
                             </label>
                             <div class="one-input">
-                                <select name="Font-family" id="text-font-family" class="panel-control-select" aria-label="Familia de fuente" tabindex="23">
+                                <select name="Font-family" id="text-font-family" class="panel-control-select" aria-label="Fuente del texto" tabindex="27">
                                     <option value="Arial">Arial</option>
                                     <option value="Arial Black">Arial Black</option>
                                     <option value="American Typewriter">American Typewriter</option>
@@ -226,7 +226,7 @@
                                     <label for="text-size-input">
                                         <h3>Tamaño</h3>
                                     </label>
-                                        <input type="number" name="Font-size" aria-label="Tamaño de fuente"" id="text-size-input" min="9" max="72" value="30" tabindex="24"/>
+                                        <input type="number" name="Font-size" aria-label="Tamaño de fuente"" id="text-size-input" min="9" max="72" value="30" tabindex="28"/>
                                 </div>
     
                     <!------TEXT ALIGN------>
@@ -234,13 +234,13 @@
                                 <div class="col-grid-2">
                                     <h3>Alineación</h3>
                                     <div class="align-container">
-                                        <button type="button" class="custom-btn txt-align" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="25">
+                                        <button type="button" class="custom-btn txt-align" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="29">
                                             <i class="fas fa-align-left" aria-hidden="true"></i>
                                         </button>
-                                        <button type="button" class="custom-btn txt-align" id="center-align-btn" aria-label="Centrar texto." tabindex="26">
+                                        <button type="button" class="custom-btn txt-align" id="center-align-btn" aria-label="Centrar texto." tabindex="30">
                                             <i class="fas fa-align-center" aria-hidden="true"></i>
                                         </button>
-                                        <button type="button" class="custom-btn txt-align" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="27">
+                                        <button type="button" class="custom-btn txt-align" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="31">
                                             <i class="fas fa-align-right" aria-hidden="true"></i>
                                         </button>
                                     </div>
@@ -258,7 +258,7 @@
                                 <div class="col-grid-1">
                                     <h3>COLOR</h3>
                                     <div>
-                                        <label for="text-color-input" class="color-select" tabindex="28">
+                                        <label for="text-color-input" class="color-select" tabindex="32">
                                             <input name="Color de texto" type="color" id="text-color-input" class="circle-selector" value="#000000" aria-label="Color de texto" />
                                             <span id="text-color" aria-hidden="true">#000000</span>
                                         </label>
@@ -269,12 +269,12 @@
     
                                 <div class="col-grid-2">
                                     <h3>FONDO</h3>
-                                    <label for="txt-bcg-color" class="color-select" tabindex="29">
-                                        <input name="Text-background-color" type="color" id="txt-bcg-color" class="circle-selector" value="#FFFFFF" aria-label="Color de fondo de texto" />
+                                    <label for="txt-bcg-color" class="color-select" tabindex="33">
+                                        <input name="Text-background-color" type="color" id="txt-bcg-color" class="circle-selector" value="#FFFFFF" aria-label="Color de fondo del texto" />
                                         <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
                                     </label>
                                     <div class="one-input checkbox-container">
-                                        <input type="checkbox" name="Transparent-background" id="remove-txt-bcg-color" tabindex="30"/>
+                                        <input type="checkbox" name="Transparent-background" id="remove-txt-bcg-color" aria-label="Quitar el fondo" tabindex="34"/>
                                             <label for="remove-txt-bcg-color">
                                                 Fondo transparente
                                             </label>
@@ -287,9 +287,9 @@
                         <div class="section-menu">
                                 <h3>CONTORNO</h3>
                                 <div class="one-input">
-                                    <button type="button" class="custom-btn" id="no-outline-btn" tabindex="31">Ninguno</button>
-                                    <button type="button" class="custom-btn" id="light-outline-btn" tabindex="32">Claro</button>
-                                    <button type="button" class="custom-btn" id="dark-outline-btn" tabindex="33">Oscuro</button>
+                                    <button type="button" class="custom-btn" id="no-outline-btn" aria-label="Quitar contorno" tabindex="35">Ninguno</button>
+                                    <button type="button" class="custom-btn" id="light-outline-btn" aria-label="Contorno claro" tabindex="36">Claro</button>
+                                    <button type="button" class="custom-btn" id="dark-outline-btn" aria-label="Contorno oscuro" tabindex="37">Oscuro</button>
                                 </div>
                         </div>
     
@@ -303,7 +303,7 @@
                                         <h3>ESPACIADO</h3>
                                     </label>
                                     <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50"
-                                    value="35" tabindex="34">
+                                    value="35" tabindex="38">
                                 </div>
     
                 <!------SPACING SECTION------>
@@ -312,7 +312,7 @@
                                     <label for="line-height-select">
                                         <h3>INTERLINEADO</h3>
                                     </label>
-                                    <select id="line-height-select" class="panel-control-select" aria-label="Interlineado" tabindex="35">
+                                    <select id="line-height-select" class="panel-control-select" aria-label="Interlineado" tabindex="39">
                                         <option value="0.8">0.8</option>
                                         <option value="1">1</option>
                                         <option value="1.2" selected>1.2</option>
@@ -332,18 +332,18 @@
         <div class="social-networks">
             <ul class="align-container">
                 <li>
-                    <a href="https://github.com/romicons" target="_blank" aria-label="Link a Github" class="footer-icon" tabindex="37"><i class="fab fa-github-alt"></i></a>
+                    <a href="https://github.com/romicons" target="_blank" aria-label="Link a Github" class="footer-icon" tabindex="5"><i class="fab fa-github-alt"></i></a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/romina-evelin-constantinoff/" class="footer-icon" target="_blank" aria-label="Link a LinkedIn" tabindex="38"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/in/romina-evelin-constantinoff/" class="footer-icon" target="_blank" aria-label="Link a LinkedIn" tabindex="6"><i class="fab fa-linkedin-in"></i></a>
                 </li>
                 <li>
-                    <a href="mailto:romina.constantinoff@gmail.com" aria-label="Link a Email" target="_blank" class="footer-icon" tabindex="39"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:romina.constantinoff@gmail.com" aria-label="Link a Email" target="_blank" class="footer-icon" tabindex="7"><i class="fas fa-envelope"></i></a>
                 </li>
             </ul>
         </div>
         <div>
-            <p class="design-by">© 2024 Romina Constantinoff. Todos los derechos reservados</p>
+            <p class="design-by">© 2024 Romina Constantinoff. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>
