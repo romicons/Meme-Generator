@@ -12,7 +12,7 @@
 </head>
 <body>
 
-        <!------TITLE AND NAV BUTTONS------>
+    <!------TITLE AND NAV BUTTONS------>
 
     <header>
         <h1>Generador de Memes</h1>
@@ -32,10 +32,9 @@
         </nav>
     </header>
 
+    <!------CANVAS: IMAGE CONTAINER------>
+
     <main>
-
-        <!------CANVAS: IMAGE CONTAINER------>
-
         <div class="edit-download-wrapper">
             <div id="canvas">
                     <p id="top-txt" class="meme-txt">TEXTO-SUPERIOR</p>
@@ -49,285 +48,286 @@
                 </button>
             </div>
         </div>
+    </main>
 
-        <!------IMAGE EDITOR MENU------>
+    <!------IMAGE EDITOR MENU------>
 
-        <aside class="img-editor-menu">
-            <div class="title-section">
-                <h2>
-                    <i class="fa-regular fa-image title-icon"></i>
-                    Imagen
-                </h2>
-                <button type="button" class="custom-btn close-window" tabindex="18"><i class="fa-solid fa-xmark title-icon"></i></button>
-            </div>
-
-            <!------IMAGE UPLOAD SECTION------>
-
-            <div class="wrapper-menu">
-                <form id="img-menu" method="post" enctype="multipart/form-data">
-                    <div class="section-menu">
-                        <div class="two-inputs">
-                            <div class="col-1">
-                                <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL." value="" tabindex="4">
-                            </div>
-                            <div class="col-2">
-                                <label for="upload-meme-img" id="btn-img-upload" tabindex="5"><i class="fa-solid fa-upload"></i></label>
-                                <input type="file" id="upload-meme-img" name="img_upload" aria-label="Subir una imagen" accept=".jpg, .jpeg, .png" />
-                            </div>
-                        </div>
-                        <div class="alert-text">
-                            <p>AÑADE TU IMAGEN PARA COMENZAR</p>
-                        </div>
-                    </div>
-
-            <!------IMAGE BACKGROUND EDITOR------>
-
-                    <div class="section-menu">
-                        <h3>FONDO</h3>
+    <aside class="img-editor-menu">
+                <div class="title-section">
+                    <h2>
+                        <i class="fa-regular fa-image title-icon"></i>
+                        Imagen
+                    </h2>
+                    <button type="button" class="custom-btn close-window" tabindex="18"><i class="fa-solid fa-xmark title-icon"></i></button>
+                </div>
+    
+                <!------IMAGE UPLOAD SECTION------>
+    
+                <div class="wrapper-menu">
+                    <form id="img-menu" method="post" enctype="multipart/form-data">
+                        <div class="section-menu">
                             <div class="two-inputs">
-                                <div class="col-2">
-                                    <label for="blend-mode-bgc" class="color-select" tabindex="6">
-                                        <input type="color" id="blend-mode-bgc" class="circle-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen.">
-                                        <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
-                                    </label>
-                                </div>
                                 <div class="col-1">
-                                    <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="7">
-                                        <option value="unset">Ninguno</option>
-                                        <option value="lighten">Aclarar</option>
-                                        <option value="darken">Oscurecer</option>
-                                        <option value="difference">Diferencia</option>
-                                        <option value="luminosity">Luminosidad</option>
-                                        <option value="multiply">Multiplicar</option>
+                                    <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL." value="" tabindex="4">
+                                </div>
+                                <div class="col-2">
+                                    <label for="upload-meme-img" id="btn-img-upload" tabindex="5"><i class="fa-solid fa-upload"></i></label>
+                                    <input type="file" id="upload-meme-img" name="img_upload" aria-label="Subir una imagen" accept=".jpg, .jpeg, .png" />
+                                </div>
+                            </div>
+                            <div class="alert-text">
+                                <p>AÑADE TU IMAGEN PARA COMENZAR</p>
+                            </div>
+                        </div>
+    
+                <!------IMAGE BACKGROUND EDITOR------>
+    
+                        <div class="section-menu">
+                            <h3>FONDO</h3>
+                                <div class="two-inputs">
+                                    <div class="col-2">
+                                        <label for="blend-mode-bgc" class="color-select" tabindex="6">
+                                            <input type="color" id="blend-mode-bgc" class="circle-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen.">
+                                            <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-1">
+                                        <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="7">
+                                            <option value="unset">Ninguno</option>
+                                            <option value="lighten">Aclarar</option>
+                                            <option value="darken">Oscurecer</option>
+                                            <option value="difference">Diferencia</option>
+                                            <option value="luminosity">Luminosidad</option>
+                                            <option value="multiply">Multiplicar</option>
+                                        </select>
+                                    </div>
+                                </div>
+                        </div>
+    
+                <!------IMAGE FILTERS EDITOR------>
+    
+                        <div class="section-menu">
+                            <h3>FILTROS</h3>
+                            <div class="one-input">
+                                <label for="brightness-slider" class="input-name">BRILLO</label>
+                                <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="8">
+                            </div>
+                            <div class="one-input">
+                                <label for="opacity-slider" class="input-name">OPACIDAD</label>
+                                <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="9">
+                            </div>
+                            <div class="one-input">
+                                <label for="contrast-slider" class="input-name">CONTRASTE</label>
+                                <input type="range" id="contrast-slider" min="100%" max="1000%" value="100%" step="1%" tabindex="10">
+                            </div>
+                            <div class="one-input">
+                                <label for="blur-slider" class="input-name">DESENFOQUE</label>
+                                <input type="range" id="blur-slider" min="0%" max="10px" value="0px" step="0.1px" tabindex="11">
+                            </div>
+                            <div class="one-input">
+                                <label for="grayscale-slider" class="input-name">ESCALA DE GRISES</label>
+                                <input type="range" id="grayscale-slider" min="0%" max="100%" value="0%" step="1%" tabindex="12">
+                            </div>
+                            <div class="one-input">
+                                <label for="sepia-slider" class="input-name">SEPIA</label>
+                                <input type="range" id="sepia-slider" min="0%" max="100%" value="0%" step="1%" tabindex="13">
+                            </div>
+                            <div class="one-input">
+                                <label for="hue-slider" class="input-name">HUE</label>
+                                <input type="range" id="hue-slider" min="0deg" max="359deg" value="0deg" step="1deg" tabindex="14">
+                            </div>
+                            <div class="one-input">
+                                <label for="saturate-slider" class="input-name">SATURADO</label>
+                                <input type="range" id="saturate-slider" min="100%" max="1000%" value="100%" step="10%" tabindex="15">
+                            </div>
+                            <div class="one-input">
+                                <label for="invert-slider" class="input-name">NEGATIVO</label>
+                                <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1" tabindex="16">
+                            </div>
+                            <div class="btn-container">
+                                <button id="btn-default-filters" type="button" tabindex="17">Reestablecer filtros</button>
+                            </div>
+                        </div>
+    
+                    </form>
+                </div>
+    </aside>   
+
+    <!------TEXT EDITOR MENU------>
+
+    <aside id="text-editor-menu">
+                <div class="title-section">
+                    <h2>
+                        <i class="fa-solid fa-font title-icon"></i>
+                        Texto
+                    </h2>
+                    <button type="button" class="custom-btn close-window" tabindex="36"><i class="fa-solid fa-xmark title-icon"></i></button>
+                </div>
+                <div class="wrapper-menu">
+                    <form id="txt-menu" method="post" enctype="multipart/form-data">
+    
+                <!------TEXT WRITER SECTION------>
+    
+                        <div class="section-menu">
+                            <label for="top-text-input">
+                                <h3>SUPERIOR</h3>
+                            </label>
+                                <div class="one-input">
+                                    <textarea aria-label="Texto superior" class="input-text text-container" id="top-text-input" placeholder="Ingresa tu texto aquí." tabindex="19"></textarea>
+                                </div>
+                                <div class="two-inputs remove-option">
+                                    <div class="col-1 checkbox-container">
+                                        <input type="checkbox" id="remove-top-text" tabindex="20">
+                                        <label for="remove-top-text">
+                                            Quitar texto
+                                        </label>
+                                    </div>
+                                </div>
+                            <label for="bottom-text-input">
+                                <h3>INFERIOR</h3>
+                            </label>
+                                <div class="one-input">
+                                    <textarea aria-label="Texto inferior" class="input-text text-container" id="bottom-text-input" placeholder="Ingresa tu texto aquí." tabindex="21"></textarea>
+                                </div>
+                                <div class="two-inputs">
+                                    <div class="col-1 checkbox-container">
+                                        <input type="checkbox" id="remove-bottom-text" tabindex="22">
+                                        <label for="remove-bottom-text">
+                                            Quitar texto
+                                        </label>
+                                    </div>
+                                </div>
+                        </div>
+    
+                <!------FONTS SECTION------>
+    
+                        <div class="section-menu">
+                            <label for="text-font-family">
+                                <h3>FUENTE</h3>
+                            </label>
+                            <div class="one-input">
+                                <select name="Font-family" id="text-font-family" class="panel-control-select" aria-label="Familia de fuente" tabindex="23">
+                                    <option value="Arial">Arial</option>
+                                    <option value="Arial Black">Arial Black</option>
+                                    <option value="American Typewriter">American Typewriter</option>
+                                    <option value="Andale Mono">Andale Mono</option>
+                                    <option value="Comic Sans MS">Comic Sans MS</option>
+                                    <option value="Helvetica">Helvetica</option>
+                                    <option value="Impact" selected>Impact</option>
+                                    <option value="Verdana">Verdana</option>
+                                    <option value="Times New Roman">Times New Roman</option>
+                                </select>
+                            </div>
+    
+                    <!------FONT SIZE------>
+    
+                            <div class="grid-cols-a">
+                                <div class="col-grid-1">
+                                    <label for="text-size-input">
+                                        <h3>Tamaño</h3>
+                                    </label>
+                                        <input type="number" name="Font-size" aria-label="Tamaño de fuente"" id="text-size-input" min="9" max="72" value="30" tabindex="24"/>
+                                </div>
+    
+                    <!------TEXT ALIGN------>
+    
+                                <div class="col-grid-2">
+                                    <h3>Alineación</h3>
+                                    <div class="align-container">
+                                        <button type="button" class="custom-btn txt-align" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="25">
+                                            <i class="fas fa-align-left" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="custom-btn txt-align" id="center-align-btn" aria-label="Centrar texto." tabindex="26">
+                                            <i class="fas fa-align-center" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="custom-btn txt-align" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="27">
+                                            <i class="fas fa-align-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                <!------COLOR SECTION------>
+    
+                        <div class="section-menu">
+                            <div class="grid-cols-b">
+    
+                    <!------TEXT COLOR------>
+    
+                                <div class="col-grid-1">
+                                    <h3>COLOR</h3>
+                                    <div>
+                                        <label for="text-color-input" class="color-select" tabindex="28">
+                                            <input name="Color de texto" type="color" id="text-color-input" class="circle-selector" value="#000000" aria-label="Color de texto" />
+                                            <span id="text-color" aria-hidden="true">#000000</span>
+                                        </label>
+                                    </div>
+                                </div>
+    
+                    <!------TEXT BACKGROUND COLOR------>
+    
+                                <div class="col-grid-2">
+                                    <h3>FONDO</h3>
+                                    <label for="txt-bcg-color" class="color-select" tabindex="29">
+                                        <input name="Text-background-color" type="color" id="txt-bcg-color" class="circle-selector" value="#FFFFFF" aria-label="Color de fondo de texto" />
+                                        <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
+                                    </label>
+                                    <div class="one-input checkbox-container">
+                                        <input type="checkbox" name="Transparent-background" id="remove-txt-bcg-color" tabindex="30"/>
+                                            <label for="remove-txt-bcg-color">
+                                                Fondo transparente
+                                            </label>
+                                    </div>
+                                </div> 
+                        </div>
+                        
+                <!------OUTLINE SECTION------>
+    
+                        <div class="section-menu">
+                                <h3>CONTORNO</h3>
+                                <div class="one-input">
+                                    <button type="button" class="custom-btn" id="no-outline-btn" tabindex="31">Ninguno</button>
+                                    <button type="button" class="custom-btn" id="light-outline-btn" tabindex="32">Claro</button>
+                                    <button type="button" class="custom-btn" id="dark-outline-btn" tabindex="33">Oscuro</button>
+                                </div>
+                        </div>
+    
+                        <div class="section-menu">
+                            <div class="grid-cols-b">
+    
+                <!------PADDING SECTION------>
+    
+                                <div class="col-grid-1">
+                                    <label for="padding-input">
+                                        <h3>ESPACIADO</h3>
+                                    </label>
+                                    <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50"
+                                    value="35" tabindex="34">
+                                </div>
+    
+                <!------SPACING SECTION------>
+    
+                                <div class="col-grid-2">
+                                    <label for="line-height-select">
+                                        <h3>INTERLINEADO</h3>
+                                    </label>
+                                    <select id="line-height-select" class="panel-control-select" aria-label="Interlineado" tabindex="35">
+                                        <option value="0.8">0.8</option>
+                                        <option value="1">1</option>
+                                        <option value="1.2" selected>1.2</option>
+                                        <option value="1.5">1.5</option>
+                                        <option value="2">2</option>
+                                        <option value="2.5">2.5</option>
                                     </select>
                                 </div>
                             </div>
-                    </div>
-
-            <!------IMAGE FILTERS EDITOR------>
-
-                    <div class="section-menu">
-                        <h3>FILTROS</h3>
-                        <div class="one-input">
-                            <label for="brightness-slider" class="input-name">BRILLO</label>
-                            <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="8">
+    
                         </div>
-                        <div class="one-input">
-                            <label for="opacity-slider" class="input-name">OPACIDAD</label>
-                            <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="9">
-                        </div>
-                        <div class="one-input">
-                            <label for="contrast-slider" class="input-name">CONTRASTE</label>
-                            <input type="range" id="contrast-slider" min="100%" max="1000%" value="100%" step="1%" tabindex="10">
-                        </div>
-                        <div class="one-input">
-                            <label for="blur-slider" class="input-name">DESENFOQUE</label>
-                            <input type="range" id="blur-slider" min="0%" max="10px" value="0px" step="0.1px" tabindex="11">
-                        </div>
-                        <div class="one-input">
-                            <label for="grayscale-slider" class="input-name">ESCALA DE GRISES</label>
-                            <input type="range" id="grayscale-slider" min="0%" max="100%" value="0%" step="1%" tabindex="12">
-                        </div>
-                        <div class="one-input">
-                            <label for="sepia-slider" class="input-name">SEPIA</label>
-                            <input type="range" id="sepia-slider" min="0%" max="100%" value="0%" step="1%" tabindex="13">
-                        </div>
-                        <div class="one-input">
-                            <label for="hue-slider" class="input-name">HUE</label>
-                            <input type="range" id="hue-slider" min="0deg" max="359deg" value="0deg" step="1deg" tabindex="14">
-                        </div>
-                        <div class="one-input">
-                            <label for="saturate-slider" class="input-name">SATURADO</label>
-                            <input type="range" id="saturate-slider" min="100%" max="1000%" value="100%" step="10%" tabindex="15">
-                        </div>
-                        <div class="one-input">
-                            <label for="invert-slider" class="input-name">NEGATIVO</label>
-                            <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1" tabindex="16">
-                        </div>
-                        <div class="btn-container">
-                            <button id="btn-default-filters" type="button" tabindex="17">Reestablecer filtros</button>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+    </aside>
 
-                </form>
-            </div>
-        </aside>        
-
-        <!------TEXT EDITOR MENU------>
-
-        <aside id="text-editor-menu">
-            <div class="title-section">
-                <h2>
-                    <i class="fa-solid fa-font title-icon"></i>
-                    Texto
-                </h2>
-                <button type="button" class="custom-btn close-window" tabindex="36"><i class="fa-solid fa-xmark title-icon"></i></button>
-            </div>
-
-            <!------TEXT WRITER SECTION------>
-
-            <div class="wrapper-menu">
-                <form id="txt-menu" method="post" enctype="multipart/form-data">
-                    <div class="section-menu">
-                        <label for="top-text-input">
-                            <h3>SUPERIOR</h3>
-                        </label>
-                            <div class="one-input">
-                                <textarea aria-label="Texto superior" class="input-text text-container" id="top-text-input" placeholder="Ingresa tu texto aquí." tabindex="19"></textarea>
-                            </div>
-                            <div class="two-inputs remove-option">
-                                <div class="col-1 checkbox-container">
-                                    <input type="checkbox" id="remove-top-text" tabindex="20">
-                                    <label for="remove-top-text">
-                                        Quitar texto
-                                    </label>
-                                </div>
-                            </div>
-                        <label for="bottom-text-input">
-                            <h3>INFERIOR</h3>
-                        </label>
-                            <div class="one-input">
-                                <textarea aria-label="Texto inferior" class="input-text text-container" id="bottom-text-input" placeholder="Ingresa tu texto aquí." tabindex="21"></textarea>
-                            </div>
-                            <div class="two-inputs">
-                                <div class="col-1 checkbox-container">
-                                    <input type="checkbox" id="remove-bottom-text" tabindex="22">
-                                    <label for="remove-bottom-text">
-                                        Quitar texto
-                                    </label>
-                                </div>
-                            </div>
-                    </div>
-
-            <!------FONTS SECTION------>
-
-                    <div class="section-menu">
-                        <label for="text-font-family">
-                            <h3>FUENTE</h3>
-                        </label>
-                        <div class="one-input">
-                            <select name="Font-family" id="text-font-family" class="panel-control-select" aria-label="Familia de fuente" tabindex="23">
-                                <option value="Arial">Arial</option>
-                                <option value="Arial Black">Arial Black</option>
-                                <option value="American Typewriter">American Typewriter</option>
-                                <option value="Andale Mono">Andale Mono</option>
-                                <option value="Comic Sans MS">Comic Sans MS</option>
-                                <option value="Helvetica">Helvetica</option>
-                                <option value="Impact" selected>Impact</option>
-                                <option value="Verdana">Verdana</option>
-                                <option value="Times New Roman">Times New Roman</option>
-                            </select>
-                        </div>
-
-                <!------FONT SIZE------>
-
-                        <div class="grid-cols-a">
-                            <div class="col-grid-1">
-                                <label for="text-size-input">
-                                    <h3>Tamaño</h3>
-                                </label>
-                                    <input type="number" name="Font-size" aria-label="Tamaño de fuente"" id="text-size-input" min="9" max="72" value="30" tabindex="24"/>
-                            </div>
-
-                <!------TEXT ALIGN------>
-
-                            <div class="col-grid-2">
-                                <h3>Alineación</h3>
-                                <div class="align-container">
-                                    <button type="button" class="custom-btn txt-align" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="25">
-                                        <i class="fas fa-align-left" aria-hidden="true"></i>
-                                    </button>
-                                    <button type="button" class="custom-btn txt-align" id="center-align-btn" aria-label="Centrar texto." tabindex="26">
-                                        <i class="fas fa-align-center" aria-hidden="true"></i>
-                                    </button>
-                                    <button type="button" class="custom-btn txt-align" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="27">
-                                        <i class="fas fa-align-right" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-            <!------COLOR SECTION------>
-
-                    <div class="section-menu">
-                        <div class="grid-cols-b">
-
-                <!------TEXT COLOR------>
-
-                            <div class="col-grid-1">
-                                <h3>COLOR</h3>
-                                <div>
-                                    <label for="text-color-input" class="color-select" tabindex="28">
-                                        <input name="Color de texto" type="color" id="text-color-input" class="circle-selector" value="#000000" aria-label="Color de texto" />
-                                        <span id="text-color" aria-hidden="true">#000000</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                <!------TEXT BACKGROUND COLOR------>
-
-                            <div class="col-grid-2">
-                                <h3>FONDO</h3>
-                                <label for="txt-bcg-color" class="color-select" tabindex="29">
-                                    <input name="Text-background-color" type="color" id="txt-bcg-color" class="circle-selector" value="#FFFFFF" aria-label="Color de fondo de texto" />
-                                    <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
-                                </label>
-                                <div class="one-input checkbox-container">
-                                    <input type="checkbox" name="Transparent-background" id="remove-txt-bcg-color" tabindex="30"/>
-                                        <label for="remove-txt-bcg-color">
-                                            Fondo transparente
-                                        </label>
-                                </div>
-                            </div> 
-                    </div>
-                    
-            <!------OUTLINE SECTION------>
-
-                    <div class="section-menu">
-                            <h3>CONTORNO</h3>
-                            <div class="one-input">
-                                <button type="button" class="custom-btn" id="no-outline-btn" tabindex="31">Ninguno</button>
-                                <button type="button" class="custom-btn" id="light-outline-btn" tabindex="32">Claro</button>
-                                <button type="button" class="custom-btn" id="dark-outline-btn" tabindex="33">Oscuro</button>
-                            </div>
-                    </div>
-
-                    <div class="section-menu">
-                        <div class="grid-cols-b">
-
-            <!------PADDING SECTION------>
-
-                            <div class="col-grid-1">
-                                <label for="padding-input">
-                                    <h3>ESPACIADO</h3>
-                                </label>
-                                <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50"
-                                value="35" tabindex="34">
-                            </div>
-
-            <!------SPACING SECTION------>
-
-                            <div class="col-grid-2">
-                                <label for="line-height-select">
-                                    <h3>INTERLINEADO</h3>
-                                </label>
-                                <select id="line-height-select" class="panel-control-select" aria-label="Interlineado" tabindex="35">
-                                    <option value="0.8">0.8</option>
-                                    <option value="1">1</option>
-                                    <option value="1.2" selected>1.2</option>
-                                    <option value="1.5">1.5</option>
-                                    <option value="2">2</option>
-                                    <option value="2.5">2.5</option>
-                                </select>
-                            </div>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
-        </aside>
-    </main>
     <footer>
         <div class="social-networks">
             <ul class="align-container">
