@@ -7,6 +7,9 @@
     <meta name="keywords" content="Meme creator, image editor, text editor." />
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="img/favicon.ico"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/9096056511.js" crossorigin="anonymous"></script>
     <title>Generador de Memes</title>
 </head>
@@ -52,13 +55,13 @@
 
     <!------IMAGE EDITOR MENU------>
 
-    <aside class="img-editor-menu">
+    <aside id="img-editor-menu">
                 <div class="title-section">
                     <h2>
                         <i class="fa-regular fa-image title-icon"></i>
                         Imagen
                     </h2>
-                    <button type="button" class="custom-btn close-window" tabindex="22"><i class="fa-solid fa-xmark title-icon"></i></button>
+                    <button type="button" id="close-img-menu" class="custom-btn close-window" tabindex="22"><i class="fa-solid fa-xmark title-icon"></i></button>
                 </div>
     
                 <!------IMAGE UPLOAD SECTION------>
@@ -161,7 +164,7 @@
                         <i class="fa-solid fa-font title-icon"></i>
                         Texto
                     </h2>
-                    <button type="button" class="custom-btn close-window" tabindex="40"><i class="fa-solid fa-xmark title-icon"></i></button>
+                    <button type="button" id="close-text-menu" class="custom-btn close-window" tabindex="40"><i class="fa-solid fa-xmark title-icon"></i></button>
                 </div>
                 <div class="wrapper-menu">
                     <form id="txt-menu" method="post" enctype="multipart/form-data">

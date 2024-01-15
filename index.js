@@ -1,10 +1,40 @@
 // DOM ELEMENTS
 
-const imgMemeContainer = document.querySelector("#canvas");
+const imgMemeContainer = document.getElementById("canvas");
 const btnImgMenu = document.getElementById("btn-img-menu");
 const btnTextMenu = document.getElementById("btn-text-menu");
+const editImgMenu = document.getElementById("img-editor-menu");
+const editTextMenu = document.getElementById("text-editor-menu");
+const btncloseImgMenu = document.getElementById("close-img-menu");
+const btncloseTextMenu = document.getElementById("close-text-menu");
 
-// FUNCTION DARK/LIGHT MODE
+// FUNCTIONS OF NAVIGATION 
+
+//    OPEN IMAGE EDITOR
+
+const openImgEditor = () => {
+  editTextMenu.style.display = "none";
+  editImgMenu.style.display = "block";
+};
+
+//    OPEN TEXT EDITOR
+
+const openTextEditor = () => {
+  editImgMenu.style.display = "none";
+  editTextMenu.style.display = "block";
+};
+
+//    CLOSE MENU
+
+const closeImgMenu = () => {
+  editImgMenu.style.display = "none";
+};
+
+const closeTextMenu = () => {
+  editTextMenu.style.display = "none";
+};
+
+//    FUNCTION DARK/LIGHT MODE
 
 let darkMode = localStorage.getItem('darkMode') === 'true';
 const darkModeToggle = document.querySelector('#btn-darkmode');
@@ -113,6 +143,13 @@ const imgFromUrl = (event) => {
 };
 
 // EVENT LISTENER
+
+//    DOM EVENTS
+
+btnImgMenu.addEventListener("click", openImgEditor);
+btnTextMenu.addEventListener("click", openTextEditor);
+btncloseImgMenu.addEventListener("click", closeImgMenu);
+btncloseTextMenu.addEventListener("click", closeTextMenu);
 
 uploadImg.addEventListener("change", updateImageDisplay);
 imgUrlInput.addEventListener("input", imgFromUrl);
