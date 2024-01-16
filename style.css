@@ -548,8 +548,13 @@ label {
 }
     /* TEXT EDITOR MENU*/
 
-#text-editor-menu {
+#text-editor-menu{
     display: none;
+}
+
+#txt-menu {
+    width: 90%;
+    margin: 0 auto;
 }
 
 
@@ -633,6 +638,10 @@ label {
     font-size: 1rem;
     }
 
+    input[type="number"] {
+    width: 100%;
+    }
+
     #canvas {
     width: 80vw;
     height: 50vh;
@@ -702,16 +711,25 @@ label {
     grid-template-columns: 50% 50%;
     }
 
+    .text-container {
+    width: 90%;
+    }
+
     .grid-cols-a {
     padding: 0;
-    grid-template-columns: 30% 50%;
+    justify-content: center;
+    grid-template-columns: 30% 60%;
     }
 
     .grid-cols-b {
-    grid-template-columns: 100%;
+    grid-template-columns: 80%;
     grid-template-areas:
         "a"
         "b";
+    }
+
+    .align-container {
+    gap: 0.5rem;
     }
 
     .color-outliner-spacing-padding-modifiers {
