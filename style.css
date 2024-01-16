@@ -629,6 +629,10 @@ label {
     padding-bottom: 1rem;
     }
 
+    #img-menu, #txt-menu {
+    width: 95%;
+    }
+
     footer {
     height: auto;
     padding-block: 1rem;
