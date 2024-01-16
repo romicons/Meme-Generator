@@ -303,7 +303,7 @@ label {
 }
 
 .col-1 {
-    width: 60%;
+    width: 50%;
     height: 2.5em;
     display: flex;
     align-items: center;
@@ -312,7 +312,7 @@ label {
 
 .col-2 {
     position: relative;
-    width: 30%;
+    width: 40%;
     height: 2.5em;
     display: flex;
     align-items: center;
@@ -607,6 +607,10 @@ label {
     height: auto;
     }
 
+    header {
+    height: auto;
+    }
+
     main {
     height: 80%;
     width: 100vw;
@@ -617,6 +621,10 @@ label {
     height: auto;
     justify-content: normal;
     padding-bottom: 1rem;
+    }
+
+    footer {
+    height: auto;
     }
 
     #canvas {
