@@ -102,7 +102,7 @@ h1, h2, h3 {
 
 aside {
     height: 100vh;
-    display: flex;
+    display: grid;
     flex-flow: column wrap;
     grid-area: aside;
     background: var(--bgc-menu);
@@ -452,7 +452,7 @@ label {
 #img-container {
     max-width: 100%;
     max-height: 75%;
-    background-color: black;
+    background-color: transparent;
     margin: 0 auto;
     object-fit: contain;
 }

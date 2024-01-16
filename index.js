@@ -13,6 +13,7 @@ const btncloseTextMenu = document.getElementById("close-text-menu");
 
 let imgMemeContainer = document.getElementById("canvas");
 const btnImgBackgroundColor = document.getElementById("blend-mode-bgc-label");
+let selectImgBlendMode = document.getElementById("blend-mode-select");
 
 //    TEXT EDITOR
 
@@ -169,6 +170,61 @@ const changeImageBackgroundColor = () => {
     imgMemeContainer.style.backgroundColor = `${imgBgcValue}`;
 };
 
+//    FUNCTION BLEND BACKGROUND COLOR
+
+const changeBlendModeColor = () => {
+  let blendModeSelected = selectImgBlendMode.value;
+
+    if (blendModeSelected === 'unset') {
+      existingImage.style.mixBlendMode = "normal";
+    }
+    else if (blendModeSelected === 'lighten') {
+      existingImage.style.mixBlendMode = "lighten";
+    }
+    else if (blendModeSelected === 'plus-lighter') {
+      existingImage.style.mixBlendMode = "plus-lighter";
+    }
+    else if (blendModeSelected === 'hard-light') {
+      existingImage.style.mixBlendMode = "hard-light";
+    }
+    else if (blendModeSelected === 'soft-light') {
+      existingImage.style.mixBlendMode = "soft-light";
+    }
+    else if (blendModeSelected === 'darken') {
+      existingImage.style.mixBlendMode = "darken";
+    }
+    else if (blendModeSelected === 'plus-darker') {
+      existingImage.style.mixBlendMode = "plus-darker";
+    }
+    else if (blendModeSelected === 'difference') {
+      existingImage.style.mixBlendMode = "difference";
+    }
+    else if (blendModeSelected === 'luminosity') {
+      existingImage.style.mixBlendMode = "luminosity";
+    }
+    else if (blendModeSelected === 'multiply') {
+      existingImage.style.mixBlendMode = "multiply";
+    }
+    else if (blendModeSelected === 'overlay') {
+      existingImage.style.mixBlendMode = "overlay";
+    }
+    else if (blendModeSelected === 'color-dodge') {
+      existingImage.style.mixBlendMode = "color-dodge";
+    }
+    else if (blendModeSelected === 'color-burn') {
+      existingImage.style.mixBlendMode = "color-burn";
+    }
+    else if (blendModeSelected === 'exclusion') {
+      existingImage.style.mixBlendMode = "exclusion";
+    }
+    else if (blendModeSelected === 'saturation') {
+      existingImage.style.mixBlendMode = "saturation";
+    }
+    else if (blendModeSelected === 'hue') {
+      existingImage.style.mixBlendMode = "hue";
+    };
+};
+
 //*********************FUNCTIONS OF THE TEXT MENU************************** 
 
 let memeTopText = document.getElementById("top-txt");
@@ -213,6 +269,7 @@ uploadImg.addEventListener("change", updateImageDisplay);
 imgUrlInput.addEventListener("input", imgFromUrl);
 
 btnImgBackgroundColor.addEventListener("input", changeImageBackgroundColor);
+selectImgBlendMode.addEventListener("change", changeBlendModeColor);
 
 //    TEXT MENU EVENTS
 
