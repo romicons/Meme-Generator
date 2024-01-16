@@ -34,12 +34,11 @@ body {
     grid-template-areas: 
         "header aside"
         "main   aside"
-        "footer aside";
+        "footer aside"
     ;
     font-family: 'Advent Pro', sans-serif;
     background-color: var(--background);
     color: var(--clr-light);
-    overflow: hidden;
     font-size: 16px;
 }
 
@@ -103,6 +102,8 @@ h1, h2, h3 {
 
 aside {
     height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
     grid-area: aside;
     background: var(--bgc-menu);
     box-shadow: var(--box-shadow);
@@ -169,6 +170,7 @@ input[type="number"] {
     border-radius: var(--border-radius);
     background-color: var(--clr-primary);
     color: var(--clr-light);
+    box-shadow: var(--box-shadow);
     cursor: pointer;
     height: 2.5em;
     font-family: 'Advent Pro', sans-serif;
@@ -246,8 +248,7 @@ label {
 /* DESIGN STYLES*/
 
 .title-section {
-    display: grid;
-    grid-template-columns: 80% 15%;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5em;
@@ -281,8 +282,7 @@ label {
 }
 
 .close-window {
-    display: flex;
-    justify-content: center;
+    display: none;
 }
 
 .btn-container {
@@ -330,12 +330,10 @@ label {
 
 .grid-cols-a {
     display: grid;
-    grid-template-columns: 30% 60%;
-    justify-content: center;
-    gap: 1em;
-    padding-inline: 1em;
+    grid-template-columns: 40% 40%;
+    justify-content: space-evenly;
     padding-block: 0.5em;
-    margin: 0 auto;   
+    margin: 0 auto;
 }
 
 .grid-cols-b {
@@ -357,7 +355,7 @@ label {
     background-color: var(--clr-primary);
     color: var(--clr-light);
     box-shadow: var(--box-shadow);
-    height: 2.2em;
+    height: 2.2rem;
     font-family: 'Advent Pro', sans-serif;
 }
 
@@ -387,7 +385,7 @@ label {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 2.2em;
+    height: 2.2rem;
     background-color: var(--clr-primary);
     border-radius: var(--border-radius);
     padding-right: 0.5em;
@@ -595,8 +593,114 @@ label {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 1340px) {
+@media screen and (max-width: 1120px) {
 
+    body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+        "header"
+        "main"
+        "aside"
+        "footer"
+    ;
+    height: auto;
+    }
+
+    main {
+    height: 80%;
+    width: 100vw;
+    }
+
+    aside {
+    display: grid;
+    height: auto;
+    justify-content: normal;
+    padding-bottom: 1rem;
+    }
+
+    #canvas {
+    width: 80vw;
+    height: 50vh;
+    }
+
+    .menu-lvl-1 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    justify-content: space-around;
+    grid-template-areas: 
+        "col-1 col-3"
+        "col-2 col-3"
+    ;
+    }
+
+    .title-section {
+    width: 100%;
+    display: flex;
+    }
+
+    .close-window {
+    display: flex;
+    justify-content: center;
+    }
+
+    .alert-text {
+    grid-area: col-1;
+    }
+
+    .add-section {
+    grid-area: col-2;
+    }
+
+    .edit-section {
+    grid-area: col-3;
+    }
+
+    .menu-lvl-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+        "one one"
+        "two three"
+    ;
+    }
+
+    .filters-column-1 {
+    grid-area: one;
+    }
+
+    .filters-column-2 {
+    grid-area: two;    
+    }
+
+    .filters-column-3 {
+    grid-area: three;
+    }
+
+    .add-text {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    }
+
+    .text-modifiers {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    }
+
+    .grid-cols-a {
+    padding: 0;
+    }
+
+    .grid-cols-b {
+    grid-template-columns: 100%;
+    grid-template-areas:
+        "a"
+        "b";
+    }
+
+    .color-outliner-spacing-padding-modifiers {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    }
 }
-
-

@@ -14,14 +14,14 @@ const btncloseTextMenu = document.getElementById("close-text-menu");
 
 const openImgEditor = () => {
   editTextMenu.style.display = "none";
-  editImgMenu.style.display = "block";
+  editImgMenu.style.display = "grid";
 };
 
 //    OPEN TEXT EDITOR
 
 const openTextEditor = () => {
   editImgMenu.style.display = "none";
-  editTextMenu.style.display = "block";
+  editTextMenu.style.display = "grid";
 };
 
 //    CLOSE MENU

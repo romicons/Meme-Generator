@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is a web app that allows you to make your own memes by adding images and text, and freely edit them."/>
-    <meta name="keywords" content="Meme creator, image editor, text editor." />
+    <meta name="description" content="This is a web app that allows you to make your own memes by adding images and text, and freely edit them.">
+    <meta name="keywords" content="Meme creator, image editor, text editor.">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/jpg" href="img/favicon.ico"/>
+    <link rel="icon" type="image/jpg" href="img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet"> 
@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <!------TITLE AND NAV BUTTONS------>
+    <!--TITLE AND NAV BUTTONS-->
 
     <header>
         <h1>Generador de Memes</h1>
@@ -35,7 +35,7 @@
         </nav>
     </header>
 
-    <!------CANVAS: IMAGE CONTAINER------>
+    <!--CANVAS: IMAGE CONTAINER-->
 
     <main>
         <div class="edit-download-wrapper">
@@ -53,7 +53,7 @@
         </div>
     </main>
 
-    <!------IMAGE EDITOR MENU------>
+    <!--IMAGE EDITOR MENU-->
 
     <aside id="img-editor-menu">
                 <div class="title-section">
@@ -63,100 +63,105 @@
                     </h2>
                     <button type="button" id="close-img-menu" class="custom-btn close-window" tabindex="22"><i class="fa-solid fa-xmark title-icon"></i></button>
                 </div>
-    
-                <!------IMAGE UPLOAD SECTION------>
-    
                 <div class="wrapper-menu">
                     <form id="img-menu" method="post" enctype="multipart/form-data">
-                        <div class="section-menu">
-                            <div class="two-inputs">
-                                <div class="col-1">
-                                    <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL." value="" tabindex="8">
-                                </div>
-                                <div class="col-2">
-                                    <label for="upload-meme-img" id="btn-img-upload" tabindex="9"><i class="fa-solid fa-upload"></i></label>
-                                    <input type="file" id="upload-meme-img" name="img_upload" aria-label="Subir una imagen" accept=".jpg, .jpeg, .png" />
-                                </div>
-                            </div>
+
+                <!--IMAGE UPLOAD SECTION-->
+                        <div class="menu-lvl-1">
                             <div class="alert-text">
                                 <p>AÑADE TU IMAGEN PARA COMENZAR</p>
                             </div>
-                        </div>
-    
-                <!------IMAGE BACKGROUND EDITOR------>
-    
-                        <div class="section-menu">
-                            <h3>FONDO</h3>
-                                <div class="two-inputs">
-                                    <div class="col-2">
-                                        <label for="blend-mode-bgc" class="color-select" tabindex="10">
-                                            <input type="color" id="blend-mode-bgc" class="circle-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen.">
-                                            <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
-                                        </label>
-                                    </div>
-                                    <div class="col-1">
-                                        <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="11">
-                                            <option value="unset">Ninguno</option>
-                                            <option value="lighten">Aclarar</option>
-                                            <option value="darken">Oscurecer</option>
-                                            <option value="difference">Diferencia</option>
-                                            <option value="luminosity">Luminosidad</option>
-                                            <option value="multiply">Multiplicar</option>
-                                        </select>
+                                <div class="section-menu add-section">
+                            
+                                    <div class="two-inputs">
+                                        <div class="col-1">
+                                            <input type="text" id="url-img-input" class="input-text" aria-label="URL de imagen" placeholder="Ingresa una URL." value="" tabindex="8">
+                                        </div>
+                                        <div class="col-2">
+                                            <label for="upload-meme-img" id="btn-img-upload" tabindex="9"><i class="fa-solid fa-upload"></i></label>
+                                            <input type="file" id="upload-meme-img" name="img_upload" aria-label="Subir una imagen" accept=".jpg, .jpeg, .png">
+                                        </div>
                                     </div>
                                 </div>
+            
+                        <!--IMAGE BACKGROUND EDITOR-->
+            
+                                <div class="section-menu edit-section">
+                                    <h3>Fondo</h3>
+                                        <div class="two-inputs">
+                                            <div class="col-2">
+                                                <label for="blend-mode-bgc" class="color-select" tabindex="10">
+                                                    <input type="color" id="blend-mode-bgc" class="circle-selector" name="color" value="#FFFFFF" aria-label="Color de fondo de imagen.">
+                                                    <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-1">
+                                                <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-select" tabindex="11">
+                                                    <option value="unset">Ninguno</option>
+                                                    <option value="lighten">Aclarar</option>
+                                                    <option value="darken">Oscurecer</option>
+                                                    <option value="difference">Diferencia</option>
+                                                    <option value="luminosity">Luminosidad</option>
+                                                    <option value="multiply">Multiplicar</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                </div>
                         </div>
-    
-                <!------IMAGE FILTERS EDITOR------>
-    
-                        <div class="section-menu">
-                            <h3>FILTROS</h3>
-                            <div class="one-input">
-                                <label for="brightness-slider" class="input-name">BRILLO</label>
-                                <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="12">
-                            </div>
-                            <div class="one-input">
-                                <label for="opacity-slider" class="input-name">OPACIDAD</label>
-                                <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="13">
-                            </div>
-                            <div class="one-input">
-                                <label for="contrast-slider" class="input-name">CONTRASTE</label>
-                                <input type="range" id="contrast-slider" min="100%" max="1000%" value="100%" step="1%" tabindex="14">
-                            </div>
-                            <div class="one-input">
-                                <label for="blur-slider" class="input-name">DESENFOQUE</label>
-                                <input type="range" id="blur-slider" min="0%" max="10px" value="0px" step="0.1px" tabindex="15">
-                            </div>
-                            <div class="one-input">
-                                <label for="grayscale-slider" class="input-name">ESCALA DE GRISES</label>
-                                <input type="range" id="grayscale-slider" min="0%" max="100%" value="0%" step="1%" tabindex="16">
-                            </div>
-                            <div class="one-input">
-                                <label for="sepia-slider" class="input-name">SEPIA</label>
-                                <input type="range" id="sepia-slider" min="0%" max="100%" value="0%" step="1%" tabindex="17">
-                            </div>
-                            <div class="one-input">
-                                <label for="hue-slider" class="input-name">HUE</label>
-                                <input type="range" id="hue-slider" min="0deg" max="359deg" value="0deg" step="1deg" tabindex="18">
-                            </div>
-                            <div class="one-input">
-                                <label for="saturate-slider" class="input-name">SATURADO</label>
-                                <input type="range" id="saturate-slider" min="100%" max="1000%" value="100%" step="10%" tabindex="19">
-                            </div>
-                            <div class="one-input">
-                                <label for="invert-slider" class="input-name">NEGATIVO</label>
-                                <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1" tabindex="20">
-                            </div>
-                            <div class="btn-container">
-                                <button id="btn-default-filters" type="button" tabindex="21">Reestablecer filtros</button>
-                            </div>
+            
+                <!--IMAGE FILTERS EDITOR-->
+
+                        <div class="section-menu menu-lvl-2">
+                            <h3 class="filters-column-1">Filtros</h3>
+                                <div class="filters-column-2">
+                                            <div class="one-input">
+                                                <label for="brightness-slider" class="input-name">BRILLO</label>
+                                                <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="12">
+                                            </div>
+                                            <div class="one-input">
+                                                <label for="opacity-slider" class="input-name">OPACIDAD</label>
+                                                <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="13">
+                                            </div>
+                                            <div class="one-input">
+                                                <label for="contrast-slider" class="input-name">CONTRASTE</label>
+                                                <input type="range" id="contrast-slider" min="100" max="1000" value="100" step="1" tabindex="14">
+                                            </div>
+                                            <div class="one-input">
+                                                <label for="blur-slider" class="input-name">DESENFOQUE</label>
+                                                <input type="range" id="blur-slider" min="0" max="10" value="0" step="0.1" tabindex="15">
+                                            </div>
+                                            <div class="one-input">
+                                                <label for="grayscale-slider" class="input-name">ESCALA DE GRISES</label>
+                                                <input type="range" id="grayscale-slider" min="0" max="100" value="0" step="1" tabindex="16">
+                                            </div>
+                                </div>
+                                <div class="filters-column-3">
+                                            <div class="one-input">
+                                                <label for="sepia-slider" class="input-name">SEPIA</label>
+                                                <input type="range" id="sepia-slider" min="0" max="100" value="0" step="1" tabindex="17">
+                                            </div>
+                                            <div class="one-input">
+                                                <label for="hue-slider" class="input-name">HUE</label>
+                                                <input type="range" id="hue-slider" min="0" max="359" value="0" step="1" tabindex="18">
+                                            </div>
+                                            <div class="one-input">
+                                                <label for="saturate-slider" class="input-name">SATURADO</label>
+                                                <input type="range" id="saturate-slider" min="100" max="1000" value="100" step="10" tabindex="19">
+                                            </div>
+                                            <div class="one-input">
+                                                <label for="invert-slider" class="input-name">NEGATIVO</label>
+                                                <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1" tabindex="20">
+                                            </div>
+                                            <div class="btn-container">
+                                                <button id="btn-default-filters" type="button" tabindex="21">Reestablecer filtros</button>
+                                            </div>
+                                </div>
                         </div>
-    
                     </form>
                 </div>
     </aside>   
 
-    <!------TEXT EDITOR MENU------>
+    <!--TEXT EDITOR MENU-->
 
     <aside id="text-editor-menu">
                 <div class="title-section">
@@ -169,163 +174,178 @@
                 <div class="wrapper-menu">
                     <form id="txt-menu" method="post" enctype="multipart/form-data">
     
-                <!------TEXT WRITER SECTION------>
-    
-                        <div class="section-menu">
-                            <label for="top-text-input">
-                                <h3>SUPERIOR</h3>
-                            </label>
-                                <div class="one-input">
-                                    <textarea aria-label="Texto superior" class="input-text text-container" id="top-text-input" placeholder="Ingresa tu texto aquí." tabindex="23"></textarea>
-                                </div>
-                                <div class="two-inputs remove-option">
-                                    <div class="col-1 checkbox-container">
-                                        <input type="checkbox" id="remove-top-text" tabindex="24">
-                                        <label for="remove-top-text">
-                                            Quitar texto
-                                        </label>
-                                    </div>
-                                </div>
-                            <label for="bottom-text-input">
-                                <h3>INFERIOR</h3>
-                            </label>
-                                <div class="one-input">
-                                    <textarea aria-label="Texto inferior" class="input-text text-container" id="bottom-text-input" placeholder="Ingresa tu texto aquí." tabindex="25"></textarea>
-                                </div>
-                                <div class="two-inputs">
-                                    <div class="col-1 checkbox-container">
-                                        <input type="checkbox" id="remove-bottom-text" tabindex="26">
-                                        <label for="remove-bottom-text">
-                                            Quitar texto
-                                        </label>
-                                    </div>
-                                </div>
-                        </div>
-    
-                <!------FONTS SECTION------>
-    
-                        <div class="section-menu">
-                            <label for="text-font-family">
-                                <h3>FUENTE</h3>
-                            </label>
-                            <div class="one-input">
-                                <select name="Font-family" id="text-font-family" class="panel-control-select" aria-label="Fuente del texto" tabindex="27">
-                                    <option value="Arial">Arial</option>
-                                    <option value="Arial Black">Arial Black</option>
-                                    <option value="American Typewriter">American Typewriter</option>
-                                    <option value="Andale Mono">Andale Mono</option>
-                                    <option value="Comic Sans MS">Comic Sans MS</option>
-                                    <option value="Helvetica">Helvetica</option>
-                                    <option value="Impact" selected>Impact</option>
-                                    <option value="Verdana">Verdana</option>
-                                    <option value="Times New Roman">Times New Roman</option>
-                                </select>
-                            </div>
-    
-                    <!------FONT SIZE------>
-    
-                            <div class="grid-cols-a">
-                                <div class="col-grid-1">
-                                    <label for="text-size-input">
-                                        <h3>Tamaño</h3>
-                                    </label>
-                                        <input type="number" name="Font-size" aria-label="Tamaño de fuente"" id="text-size-input" min="9" max="72" value="30" tabindex="28"/>
-                                </div>
-    
-                    <!------TEXT ALIGN------>
-    
-                                <div class="col-grid-2">
-                                    <h3>Alineación</h3>
-                                    <div class="align-container">
-                                        <button type="button" class="custom-btn txt-align" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="29">
-                                            <i class="fas fa-align-left" aria-hidden="true"></i>
-                                        </button>
-                                        <button type="button" class="custom-btn txt-align" id="center-align-btn" aria-label="Centrar texto." tabindex="30">
-                                            <i class="fas fa-align-center" aria-hidden="true"></i>
-                                        </button>
-                                        <button type="button" class="custom-btn txt-align" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="31">
-                                            <i class="fas fa-align-right" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                <!------COLOR SECTION------>
-    
-                        <div class="section-menu">
-                            <div class="grid-cols-b">
-    
-                    <!------TEXT COLOR------>
-    
-                                <div class="col-grid-1">
-                                    <h3>COLOR</h3>
-                                    <div>
-                                        <label for="text-color-input" class="color-select" tabindex="32">
-                                            <input name="Color de texto" type="color" id="text-color-input" class="circle-selector" value="#000000" aria-label="Color de texto" />
-                                            <span id="text-color" aria-hidden="true">#000000</span>
-                                        </label>
-                                    </div>
-                                </div>
-    
-                    <!------TEXT BACKGROUND COLOR------>
-    
-                                <div class="col-grid-2">
-                                    <h3>FONDO</h3>
-                                    <label for="txt-bcg-color" class="color-select" tabindex="33">
-                                        <input name="Text-background-color" type="color" id="txt-bcg-color" class="circle-selector" value="#FFFFFF" aria-label="Color de fondo del texto" />
-                                        <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
-                                    </label>
-                                    <div class="one-input checkbox-container">
-                                        <input type="checkbox" name="Transparent-background" id="remove-txt-bcg-color" aria-label="Quitar el fondo" tabindex="34"/>
-                                            <label for="remove-txt-bcg-color">
-                                                Fondo transparente
-                                            </label>
-                                    </div>
-                                </div> 
-                        </div>
+                <!--TEXT WRITER SECTION-->
                         
-                <!------OUTLINE SECTION------>
-    
-                        <div class="section-menu">
-                                <h3>CONTORNO</h3>
-                                <div class="one-input">
-                                    <button type="button" class="custom-btn" id="no-outline-btn" aria-label="Quitar contorno" tabindex="35">Ninguno</button>
-                                    <button type="button" class="custom-btn" id="light-outline-btn" aria-label="Contorno claro" tabindex="36">Claro</button>
-                                    <button type="button" class="custom-btn" id="dark-outline-btn" aria-label="Contorno oscuro" tabindex="37">Oscuro</button>
-                                </div>
-                        </div>
-    
-                        <div class="section-menu">
-                            <div class="grid-cols-b">
-    
-                <!------PADDING SECTION------>
-    
-                                <div class="col-grid-1">
-                                    <label for="padding-input">
-                                        <h3>ESPACIADO</h3>
+                            <div class="section-menu add-text">
+                                <div>
+                                    <label for="top-text-input">
+                                        <h3>Superior</h3>
                                     </label>
-                                    <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50"
-                                    value="35" tabindex="38">
-                                </div>
-    
-                <!------SPACING SECTION------>
-    
-                                <div class="col-grid-2">
-                                    <label for="line-height-select">
-                                        <h3>INTERLINEADO</h3>
+                                        <div class="one-input">
+                                            <textarea aria-label="Texto superior" class="input-text text-container" id="top-text-input" placeholder="Ingresa tu texto aquí." tabindex="23"></textarea>
+                                        </div>
+                                        <div class="two-inputs remove-option">
+                                            <div class="col-1 checkbox-container">
+                                                <input type="checkbox" id="remove-top-text" tabindex="24">
+                                                <label for="remove-top-text">
+                                                    Quitar texto
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div>
+                                    <label for="bottom-text-input">
+                                        <h3>Inferior</h3>
                                     </label>
-                                    <select id="line-height-select" class="panel-control-select" aria-label="Interlineado" tabindex="39">
-                                        <option value="0.8">0.8</option>
-                                        <option value="1">1</option>
-                                        <option value="1.2" selected>1.2</option>
-                                        <option value="1.5">1.5</option>
-                                        <option value="2">2</option>
-                                        <option value="2.5">2.5</option>
-                                    </select>
+                                        <div class="one-input">
+                                            <textarea aria-label="Texto inferior" class="input-text text-container" id="bottom-text-input" placeholder="Ingresa tu texto aquí." tabindex="25"></textarea>
+                                        </div>
+                                        <div class="two-inputs">
+                                            <div class="col-1 checkbox-container">
+                                                <input type="checkbox" id="remove-bottom-text" tabindex="26">
+                                                <label for="remove-bottom-text">
+                                                    Quitar texto
+                                                </label>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
-    
+        
+                        <!--FONTS SECTION-->
+
+                            <div class="text-modifiers">
+                                    <div class="section-menu">
+                                        <label for="text-font-family">
+                                            <h3>Fuente</h3>
+                                        </label>
+                                        <div class="one-input">
+                                            <select name="Font-family" id="text-font-family" class="panel-control-select" aria-label="Fuente del texto" tabindex="27">
+                                                <option value="Arial">Arial</option>
+                                                <option value="Arial Black">Arial Black</option>
+                                                <option value="American Typewriter">American Typewriter</option>
+                                                <option value="Andale Mono">Andale Mono</option>
+                                                <option value="Comic Sans MS">Comic Sans MS</option>
+                                                <option value="Helvetica">Helvetica</option>
+                                                <option value="Impact" selected>Impact</option>
+                                                <option value="Verdana">Verdana</option>
+                                                <option value="Times New Roman">Times New Roman</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                
+                                <!--FONT SIZE-->
+                                    
+                                    <div class="section-menu">
+                                        <div class="grid-cols-a">
+                                            <div class="col-grid-1">
+                                                <label for="text-size-input">
+                                                    <h3>Tamaño</h3>
+                                                </label>
+                                                    <input type="number" name="Font-size" aria-label="Tamaño de fuente" id="text-size-input" min="9" max="72" value="30" tabindex="28">
+                                            </div>
+                
+                                <!--TEXT ALIGN-->
+                
+                                            <div class="col-grid-2">
+                                                <h3>Alineación</h3>
+                                                <div class="align-container">
+                                                    <button type="button" class="custom-btn txt-align" id="left-align-btn" aria-label="Alinear texto a la izquierda." tabindex="29">
+                                                        <i class="fas fa-align-left" aria-hidden="true"></i>
+                                                    </button>
+                                                    <button type="button" class="custom-btn txt-align" id="center-align-btn" aria-label="Centrar texto." tabindex="30">
+                                                        <i class="fas fa-align-center" aria-hidden="true"></i>
+                                                    </button>
+                                                    <button type="button" class="custom-btn txt-align" id="right-align-btn" aria-label="Alinear texto a la derecha." tabindex="31">
+                                                        <i class="fas fa-align-right" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            
+                    <!--COLOR SECTION-->
+                            
+                        <div class="color-outliner-spacing-padding-modifiers">
+                            <div class="col-one">
+                                <div class="section-menu">
+                                    <div class="grid-cols-b col-one">
+            
+                            <!--TEXT COLOR-->
+            
+                                        <div class="col-grid-1">
+                                            <h3>Color</h3>
+                                            <div>
+                                                <label for="text-color-input" class="color-select" tabindex="32">
+                                                    <input name="Color de texto" type="color" id="text-color-input" class="circle-selector" value="#000000" aria-label="Color de texto">
+                                                    <span id="text-color" aria-hidden="true">#000000</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+            
+                            <!--TEXT BACKGROUND COLOR-->
+            
+                                        <div class="col-grid-2">
+                                            <h3>Fondo</h3>
+                                            <label for="txt-bcg-color" class="color-select" tabindex="33">
+                                                <input name="Text-background-color" type="color" id="txt-bcg-color" class="circle-selector" value="#FFFFFF" aria-label="Color de fondo del texto">
+                                                <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
+                                            </label>
+                                            <div class="one-input checkbox-container">
+                                                <input type="checkbox" name="Transparent-background" id="remove-txt-bcg-color" aria-label="Quitar el fondo" tabindex="34">
+                                                    <label for="remove-txt-bcg-color">
+                                                        Fondo transparente
+                                                    </label>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        <!--OUTLINE SECTION-->
+            
+                            <div class="col-two">
+                                <div class="section-menu col-two">
+                                        <h3>Contorno</h3>
+                                        <div class="one-input">
+                                            <button type="button" class="custom-btn" id="no-outline-btn" aria-label="Quitar contorno" tabindex="35">Ninguno</button>
+                                            <button type="button" class="custom-btn" id="light-outline-btn" aria-label="Contorno claro" tabindex="36">Claro</button>
+                                            <button type="button" class="custom-btn" id="dark-outline-btn" aria-label="Contorno oscuro" tabindex="37">Oscuro</button>
+                                        </div>
+                                </div>
+                            
+                                <div class="section-menu">
+                                        <div class="grid-cols-b">
+                
+                            <!--PADDING SECTION-->
+                
+                                            <div class="col-grid-1">
+                                                <label for="padding-input">
+                                                    <h3>Espaciado</h3>
+                                                </label>
+                                                <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50"
+                                                value="35" tabindex="38">
+                                            </div>
+                
+                            <!--SPACING SECTION-->
+                
+                                            <div class="col-grid-2">
+                                                <label for="line-height-select">
+                                                    <h3>Interlineado</h3>
+                                                </label>
+                                                <select id="line-height-select" class="panel-control-select" aria-label="Interlineado" tabindex="39">
+                                                    <option value="0.8">0.8</option>
+                                                    <option value="1">1</option>
+                                                    <option value="1.2" selected>1.2</option>
+                                                    <option value="1.5">1.5</option>
+                                                    <option value="2">2</option>
+                                                    <option value="2.5">2.5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -350,5 +370,5 @@
         </div>
     </footer>
 </body>
-<script src="index.js" type="text/Javascript"></script>
+<script src="index.js"></script>
 </html>
