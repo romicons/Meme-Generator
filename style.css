@@ -629,6 +629,10 @@ label {
     padding-block: 1rem;
     }
 
+    h3 {
+    font-size: 1rem;
+    }
+
     #canvas {
     width: 80vw;
     height: 50vh;
@@ -713,5 +717,9 @@ label {
     .color-outliner-spacing-padding-modifiers {
     display: grid;
     grid-template-columns: 50% 50%;
+    }
+
+    #btn-default-filters {
+    width: 8em;
     }
 }
