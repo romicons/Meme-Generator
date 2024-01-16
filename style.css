@@ -625,6 +625,7 @@ label {
 
     footer {
     height: auto;
+    padding-block: 1rem;
     }
 
     #canvas {
