@@ -430,7 +430,7 @@ label {
 #canvas {
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 45vw;
     height: 57vh;
     background-color: white;

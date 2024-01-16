@@ -1,6 +1,7 @@
-// DOM ELEMENTS
+//****************************DOM ELEMENTS*********************************
 
-const imgMemeContainer = document.getElementById("canvas");
+//    NAVIGATION
+
 const btnImgMenu = document.getElementById("btn-img-menu");
 const btnTextMenu = document.getElementById("btn-text-menu");
 const editImgMenu = document.getElementById("img-editor-menu");
@@ -8,7 +9,20 @@ const editTextMenu = document.getElementById("text-editor-menu");
 const btncloseImgMenu = document.getElementById("close-img-menu");
 const btncloseTextMenu = document.getElementById("close-text-menu");
 
-// FUNCTIONS OF NAVIGATION 
+//    IMAGE EDITOR
+
+let imgMemeContainer = document.getElementById("canvas");
+const btnImgBackgroundColor = document.getElementById("blend-mode-bgc-label");
+
+//    TEXT EDITOR
+
+let topTextMeme = document.getElementById("top-text-input");
+let bottomTextMeme = document.getElementById("bottom-text-input");
+const btnTextColor = document.getElementById("text-color-label");
+const btnTextBackGroundColor = document.getElementById("text-bgc-color-label");
+
+
+//***********************FUNCTIONS OF NAVIGATION***************************
 
 //    OPEN IMAGE EDITOR
 
@@ -58,7 +72,9 @@ darkModeToggle.addEventListener('click', () => {
   }
 });
 
-// FUNCTION TO UPLOAD AN IMAGE
+//*********************FUNCTIONS OF THE IMAGE MENU*************************
+
+//    FUNCTION TO UPLOAD AN IMAGE
 
 const uploadImg = document.querySelector("#upload-meme-img");
 const fileImg = document.querySelector('input[type="file"][name="img_upload"]');
@@ -107,7 +123,7 @@ const currentFile = fileImg.files[0];
   }
 };
 
-//FUNCTION TO USE AN IMAGE FROM AN URL
+//    FUNCTION TO USE AN IMAGE FROM AN URL
 
 const validLinks = [
   /^(https:\/\/.*)(\.jpg|\.png)?$/,
@@ -142,7 +158,47 @@ const imgFromUrl = (event) => {
     }
 };
 
-// EVENT LISTENER
+//    FUNCTION BACKGROUND COLOR IMAGE
+
+const changeImageBackgroundColor = () => {
+  let imgBackgroundColor = document.getElementById("blend-mode-bgc");
+  let imgBgcSelected = document.getElementById("blend-mode-color-value");
+  let imgBgcValue = imgBackgroundColor.value;
+
+    imgBgcSelected.textContent = `${imgBgcValue}`;
+    imgMemeContainer.style.backgroundColor = `${imgBgcValue}`;
+};
+
+//*********************FUNCTIONS OF THE TEXT MENU************************** 
+
+let memeTopText = document.getElementById("top-txt");
+let memeBottomText = document.getElementById("bottom-txt");
+
+//    FUNCTION TEXT COLOR
+
+const changeTextColor = () => {
+  let textColor = document.getElementById("text-color-input");
+  let textColorSelected = document.getElementById("text-color-value");
+  let textColorValue = textColor.value;
+
+    textColorSelected.textContent = `${textColorValue}`;
+    memeTopText.style.color = `${textColorValue}`;
+    memeBottomText.style.color = `${textColorValue}`;
+}
+
+//    FUNCTION TEXT BACKGROUND COLOR
+
+const changeTextBackgroundColor = () => {
+  let textBackGroundColor = document.getElementById("text-bcg-color");
+  let textBgcSelected = document.getElementById("text-background-color-value");
+  let textBgcValue = textBackGroundColor.value;
+
+    textBgcSelected.textContent = `${textBgcValue}`;
+    memeTopText.style.backgroundColor = `${textBgcValue}`;
+    memeBottomText.style.backgroundColor = `${textBgcValue}`;
+}
+
+//***************************EVENT LISTENER********************************
 
 //    DOM EVENTS
 
@@ -151,5 +207,14 @@ btnTextMenu.addEventListener("click", openTextEditor);
 btncloseImgMenu.addEventListener("click", closeImgMenu);
 btncloseTextMenu.addEventListener("click", closeTextMenu);
 
+//    IMAGE MENU EVENTS
+
 uploadImg.addEventListener("change", updateImageDisplay);
 imgUrlInput.addEventListener("input", imgFromUrl);
+
+btnImgBackgroundColor.addEventListener("input", changeImageBackgroundColor);
+
+//    TEXT MENU EVENTS
+
+btnTextColor.addEventListener("input", changeTextColor);
+btnTextBackGroundColor.addEventListener("input", changeTextBackgroundColor);
