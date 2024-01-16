@@ -710,6 +710,10 @@ label {
     grid-template-columns: 50% 50%;
     }
 
+    #text-font-family {
+    width: 90%;
+    }
+
     .text-modifiers {
     display: grid;
     grid-template-columns: 50% 50%;
