@@ -589,6 +589,7 @@ label {
 
 .design-by {
     font-size: 1.2rem;
+    text-align: center;
 }
 
 /* MEDIA QUERIES */
@@ -699,6 +700,7 @@ label {
 
     .grid-cols-a {
     padding: 0;
+    grid-template-columns: 30% 50%;
     }
 
     .grid-cols-b {
