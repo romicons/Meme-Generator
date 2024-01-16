@@ -303,7 +303,7 @@ label {
 }
 
 .col-1 {
-    width: 50%;
+    width: 60%;
     height: 2.5em;
     display: flex;
     align-items: center;
@@ -312,7 +312,7 @@ label {
 
 .col-2 {
     position: relative;
-    width: 40%;
+    width: 30%;
     height: 2.5em;
     display: flex;
     align-items: center;
@@ -548,13 +548,8 @@ label {
 }
     /* TEXT EDITOR MENU*/
 
-#text-editor-menu{
+#text-editor-menu {
     display: none;
-}
-
-#txt-menu {
-    width: 90%;
-    margin: 0 auto;
 }
 
 
@@ -629,37 +624,14 @@ label {
     padding-bottom: 1rem;
     }
 
-    #img-menu, #txt-menu {
-    width: 95%;
-    }
-
     footer {
     height: auto;
-    padding-block: 1rem;
-    }
-
-    h3 {
-    font-size: 1rem;
-    }
-
-    input[type="number"] {
-    width: 100%;
+    padding-block: 1em;
     }
 
     #canvas {
     width: 80vw;
     height: 50vh;
-    }
-
-    .menu-lvl-1 {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
-    justify-content: space-around;
-    grid-template-areas: 
-        "col-1 col-3"
-        "col-2 col-3"
-    ;
     }
 
     .title-section {
@@ -670,82 +642,5 @@ label {
     .close-window {
     display: flex;
     justify-content: center;
-    }
-
-    .alert-text {
-    grid-area: col-1;
-    }
-
-    .add-section {
-    grid-area: col-2;
-    }
-
-    .edit-section {
-    grid-area: col-3;
-    }
-
-    .menu-lvl-2 {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: 
-        "one one"
-        "two three"
-    ;
-    }
-
-    .filters-column-1 {
-    grid-area: one;
-    }
-
-    .filters-column-2 {
-    grid-area: two;    
-    }
-
-    .filters-column-3 {
-    grid-area: three;
-    }
-
-    .add-text {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    }
-
-    #text-font-family {
-    width: 90%;
-    }
-
-    .text-modifiers {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    }
-
-    .text-container {
-    width: 90%;
-    }
-
-    .grid-cols-a {
-    padding: 0;
-    justify-content: center;
-    grid-template-columns: 30% 60%;
-    }
-
-    .grid-cols-b {
-    grid-template-columns: 80%;
-    grid-template-areas:
-        "a"
-        "b";
-    }
-
-    .align-container {
-    gap: 0.5rem;
-    }
-
-    .color-outliner-spacing-padding-modifiers {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    }
-
-    #btn-default-filters {
-    width: 8em;
     }
 }

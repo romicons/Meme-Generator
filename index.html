@@ -67,11 +67,10 @@
                     <form id="img-menu" method="post" enctype="multipart/form-data">
 
                 <!--IMAGE UPLOAD SECTION-->
-                        <div class="menu-lvl-1">
                             <div class="alert-text">
                                 <p>AÑADE TU IMAGEN PARA COMENZAR</p>
                             </div>
-                                <div class="section-menu add-section">
+                                <div class="section-menu">
                             
                                     <div class="two-inputs">
                                         <div class="col-1">
@@ -86,7 +85,7 @@
             
                         <!--IMAGE BACKGROUND EDITOR-->
             
-                                <div class="section-menu edit-section">
+                                <div class="section-menu">
                                     <h3>Fondo</h3>
                                         <div class="two-inputs">
                                             <div class="col-2">
@@ -107,13 +106,11 @@
                                             </div>
                                         </div>
                                 </div>
-                        </div>
             
                 <!--IMAGE FILTERS EDITOR-->
 
-                        <div class="section-menu menu-lvl-2">
-                            <h3 class="filters-column-1">Filtros</h3>
-                                <div class="filters-column-2">
+                        <div class="section-menu">
+                            <h3>Filtros</h3>
                                             <div class="one-input">
                                                 <label for="brightness-slider" class="input-name">BRILLO</label>
                                                 <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="12">
@@ -134,8 +131,6 @@
                                                 <label for="grayscale-slider" class="input-name">ESCALA DE GRISES</label>
                                                 <input type="range" id="grayscale-slider" min="0" max="100" value="0" step="1" tabindex="16">
                                             </div>
-                                </div>
-                                <div class="filters-column-3">
                                             <div class="one-input">
                                                 <label for="sepia-slider" class="input-name">SEPIA</label>
                                                 <input type="range" id="sepia-slider" min="0" max="100" value="0" step="1" tabindex="17">
@@ -155,7 +150,6 @@
                                             <div class="btn-container">
                                                 <button id="btn-default-filters" type="button" tabindex="21">Reestablecer filtros</button>
                                             </div>
-                                </div>
                         </div>
                     </form>
                 </div>
@@ -176,7 +170,7 @@
     
                 <!--TEXT WRITER SECTION-->
                         
-                            <div class="section-menu add-text">
+                            <div class="section-menu">
                                 <div>
                                     <label for="top-text-input">
                                         <h3>Superior</h3>
@@ -213,7 +207,6 @@
         
                         <!--FONTS SECTION-->
 
-                            <div class="text-modifiers">
                                     <div class="section-menu">
                                         <label for="text-font-family">
                                             <h3>Fuente</h3>
@@ -262,14 +255,11 @@
                                             </div>
                                         </div>
                                     </div>
-                            </div>
                             
                     <!--COLOR SECTION-->
                             
-                        <div class="color-outliner-spacing-padding-modifiers">
-                            <div class="col-one">
                                 <div class="section-menu">
-                                    <div class="grid-cols-b col-one">
+                                    <div class="grid-cols-b">
             
                             <!--TEXT COLOR-->
             
@@ -301,12 +291,11 @@
                                         </div> 
                                     </div>
                                 </div>
-                            </div>
+
                             
                         <!--OUTLINE SECTION-->
             
-                            <div class="col-two">
-                                <div class="section-menu col-two">
+                                <div class="section-menu">
                                         <h3>Contorno</h3>
                                         <div class="one-input">
                                             <button type="button" class="custom-btn" id="no-outline-btn" aria-label="Quitar contorno" tabindex="35">Ninguno</button>
@@ -345,8 +334,6 @@
                                             </div>
                                         </div>
                                 </div>
-                            </div>
-                        </div>
                     </form>
                 </div>
     </aside>
