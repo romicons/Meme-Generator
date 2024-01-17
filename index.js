@@ -12,6 +12,10 @@ const btncloseTextMenu = document.getElementById("close-text-menu");
 //    IMAGE EDITOR
 
 let imgMemeContainer = document.getElementById("canvas");
+
+const uploadImg = document.querySelector("#upload-meme-img");
+const imgUrlInput = document.getElementById("url-img-input");
+
 const btnImgBackgroundColor = document.getElementById("blend-mode-bgc-label");
 let selectImgBlendMode = document.getElementById("blend-mode-select");
 
@@ -25,6 +29,8 @@ const checkToRemoveBottomText = document.getElementById("remove-bottom-text");
 
 const selectFontFamily = document.getElementById("select-text-font-family");
 
+const inputFontSize = document.getElementById("text-size-input");
+
 const btnLeftAlign = document.getElementById("left-align-btn");
 const btnCenterAlign = document.getElementById("center-align-btn");
 const btnRightAlign = document.getElementById("right-align-btn");
@@ -37,7 +43,9 @@ const btnNoOutline = document.getElementById("no-outline-btn");
 const btnLightOutline = document.getElementById("light-outline-btn");
 const btnDarkOutline = document.getElementById("dark-outline-btn");
 
-const selectTextSpacing = document.getElementById("line-height-select");
+const inputTextPadding = document.getElementById("padding-input");
+
+const selectTextLineHeigth = document.getElementById("line-height-select");
 
 //***********************FUNCTIONS OF NAVIGATION***************************
 
@@ -102,26 +110,25 @@ darkModeToggle.addEventListener('click', () => {
 
 //    FUNCTION TO UPLOAD AN IMAGE
 
-const uploadImg = document.querySelector("#upload-meme-img");
-const fileImg = document.querySelector('input[type="file"][name="img_upload"]');
 const existingImage = document.getElementById("img-container");
 const errorTxt = document.querySelector(".alert-text");
-
 let noImg = document.createElement("p")
 let txtInvalidFile = document.createElement("p");
 
-const fileTypes = [
-  "image/apng",
-  "image/jpeg",
-  "image/pjpeg",
-  "image/png",
-];
-
-const validFileType = (file) => {
-  return fileTypes.includes(file.type);
-};
-
 const updateImageDisplay = () => {
+  const fileImg = document.querySelector('input[type="file"][name="img_upload"]');
+  const fileTypes = [
+    "image/apng",
+    "image/jpeg",
+    "image/pjpeg",
+    "image/png",
+  ];
+  
+  const validFileType = (file) => {
+    return fileTypes.includes(file.type);
+  };
+  
+
   while (errorTxt.firstChild) {
     errorTxt.removeChild(errorTxt.firstChild);
   };
@@ -151,21 +158,19 @@ const updateImageDisplay = () => {
 
 //    FUNCTION TO USE AN IMAGE FROM AN URL
 
-const validLinks = [
-  /^(https:\/\/.*)(\.jpg|\.png)?$/,
-  /^data:image\/png/,
-  /^data:image\/jpeg/,
-  /^data:image\/apng/,
-  /^data:image\/ajpeg/
-];
-
-const imgUrlInput = document.getElementById("url-img-input");
-
-const validUrl = (url) => {
-  return validLinks.some(regex => regex.test(url));
-}
-
 const imgFromUrl = (event) => {
+  const validLinks = [
+    /^(https:\/\/.*)(\.jpg|\.png)?$/,
+    /^data:image\/png/,
+    /^data:image\/jpeg/,
+    /^data:image\/apng/,
+    /^data:image\/ajpeg/
+  ];
+  
+  const validUrl = (url) => {
+    return validLinks.some(regex => regex.test(url));
+  }
+
   event.preventDefault()
   let imgUrl = imgUrlInput.value;
 
@@ -187,12 +192,10 @@ const imgFromUrl = (event) => {
 //    FUNCTION TO CHANGE THE BACKGROUND COLOR IMAGE
 
 const changeImageBackgroundColor = () => {
-  let imgBackgroundColor = document.getElementById("blend-mode-bgc");
   let imgBgcSelected = document.getElementById("blend-mode-color-value");
-  let imgBgcValue = imgBackgroundColor.value;
 
-  imgBgcSelected.textContent = `${imgBgcValue}`;
-  imgMemeContainer.style.backgroundColor = `${imgBgcValue}`;
+  imgBgcSelected.textContent = document.getElementById("blend-mode-bgc").value;
+  imgMemeContainer.style.backgroundColor = document.getElementById("blend-mode-bgc").value;
 };
 
 //    FUNCTION TO BLEND THE BACKGROUND COLOR OF THE IMAGE
@@ -230,6 +233,16 @@ const removeText = (checkbox, text) => {
   };
 };
 
+//    FUNCTION TO CHANGE THE FONT SIZE
+
+const changeFontSize = () => {
+  let valueToNumber =  parseInt(inputFontSize.value);
+
+  memeTexts.forEach((text) => {
+    text.style.fontSize = `${valueToNumber}px`;
+  })
+};
+
 //    FUNTION TO ALIGN THE TEXT
 
 let changeTextAlign = (textAlign) => {
@@ -241,30 +254,26 @@ let changeTextAlign = (textAlign) => {
 //    FUNCTION TO CHANGE THE TEXT COLOR
 
 const changeTextColor = () => {
-  let textColor = document.getElementById("text-color-input");
   let textColorSelected = document.getElementById("text-color-value");
-  let textColorValue = textColor.value;
 
-  textColorSelected.textContent = `${textColorValue}`;
+  textColorSelected.textContent = document.getElementById("text-color-input").value;
   memeTexts.forEach((text) => {
-    text.style.color = `${textColorValue}`;
+    text.style.color = document.getElementById("text-color-input");
   });
 };
 
 //    FUNCTION TO CHANGE THE TEXT BACKGROUND COLOR
 
 const changeTextBackgroundColor = () => {
-  let textBackGroundColor = document.getElementById("text-bcg-color");
-  let textBgcValue = textBackGroundColor.value;
   let textBgcSelected = document.getElementById("text-background-color-value");
 
-  textBgcSelected.textContent = `${textBgcValue}`;
+  textBgcSelected.textContent = document.getElementById("text-bcg-color").value;
 
   let checkboxState = document.getElementById("remove-txt-bcg-color").checked;
 
   if (!checkboxState) {
     memeTexts.forEach((text) => {
-      text.style.backgroundColor = `${textBgcValue}`;
+      text.style.backgroundColor = document.getElementById("text-bcg-color").value;
     });
   }
 
@@ -316,11 +325,22 @@ const changeTextOutline = (outline) => {
   }
 };
 
-//    FUNCTION TO CHANGE THE TEXT SPACING
+//    FUNCTION TO CHANGE THE TEXT PADDING
 
-const changeTextSpacing = () => {
+const changeTextPadding = () => {
+  let valueToNumber =  parseInt(inputTextPadding.value);
+
   memeTexts.forEach((text) => {
-    text.style.lineHeight = `${selectTextSpacing.value}`;
+    text.style.height = `calc(15% + ${valueToNumber}px)`;
+  })
+  existingImage.style.height = `calc(70% - ${valueToNumber *2}px`;
+};
+
+//    FUNCTION TO CHANGE THE LINE HEIGHT
+
+const changeLineHeight = () => {
+  memeTexts.forEach((text) => {
+    text.style.lineHeight = `${selectTextLineHeigth.value}`;
   })
 };
 
@@ -329,7 +349,6 @@ const changeTextSpacing = () => {
 //    DOM EVENTS
 
 btnImgMenu.addEventListener("click", openImgEditor);
-
 btnTextMenu.addEventListener("click", openTextEditor);
 btncloseImgMenu.addEventListener("click", closeImgMenu);
 btncloseTextMenu.addEventListener("click", closeTextMenu);
@@ -352,6 +371,8 @@ checkToRemoveBottomText.addEventListener("click", (e) => { removeText(checkToRem
 
 selectFontFamily.addEventListener("change", changeFontFamily);
 
+inputFontSize.addEventListener("input", changeFontSize);
+
 btnLeftAlign.addEventListener("click", (e) => { changeTextAlign('left'); });
 btnCenterAlign.addEventListener("click", (e) => { changeTextAlign('center'); });
 btnRightAlign.addEventListener("click", (e) => { changeTextAlign('right'); });
@@ -364,4 +385,6 @@ btnNoOutline.addEventListener("click", (e) => { changeTextOutline('none'); })
 btnLightOutline.addEventListener("click", (e) => { changeTextOutline('lighter'); })
 btnDarkOutline.addEventListener("click", (e) => { changeTextOutline('darker'); })
 
-selectTextSpacing.addEventListener("change", changeTextSpacing);
+inputTextPadding.addEventListener("input", changeTextPadding);
+
+selectTextLineHeigth.addEventListener("change", changeLineHeight);
