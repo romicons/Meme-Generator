@@ -90,7 +90,7 @@ const disableDarkMode = () => {
 }
 
 darkModeToggle.addEventListener('click', () => {
-  darkMode = !darkMode; 
+  darkMode = !darkMode;
   if (darkMode) {
     enableDarkMode();
   } else {
@@ -123,29 +123,29 @@ const validFileType = (file) => {
 
 const updateImageDisplay = () => {
   while (errorTxt.firstChild) {
-      errorTxt.removeChild(errorTxt.firstChild);
-};
+    errorTxt.removeChild(errorTxt.firstChild);
+  };
 
-const currentFile = fileImg.files[0];
+  const currentFile = fileImg.files[0];
 
   if (!currentFile) {
-      noImg.textContent = "No has cargado ninguna imagen.";
-      noImg.style.color = "red";
-      errorTxt.appendChild(noImg);
+    noImg.textContent = "No has cargado ninguna imagen.";
+    noImg.style.color = "red";
+    errorTxt.appendChild(noImg);
   } else {
-      if (validFileType(currentFile)) {
-          if (existingImage) {
-              existingImage.src = URL.createObjectURL(currentFile);
-          } else {
-              txtInvalidFile.textContent = "No se encontró ninguna imagen. Por favor, intente nuevamente.";
-              txtInvalidFile.style.color = "red";
-              errorTxt.appendChild(txtInvalidFile);
-          }
+    if (validFileType(currentFile)) {
+      if (existingImage) {
+        existingImage.src = URL.createObjectURL(currentFile);
       } else {
-          txtInvalidFile.textContent = `${currentFile.name}: No es un archivo válido. Por favor, intente nuevamente.`;
-          txtInvalidFile.style.color = "red";
-          errorTxt.appendChild(txtInvalidFile);
+        txtInvalidFile.textContent = "No se encontró ninguna imagen. Por favor, intente nuevamente.";
+        txtInvalidFile.style.color = "red";
+        errorTxt.appendChild(txtInvalidFile);
       }
+    } else {
+      txtInvalidFile.textContent = `${currentFile.name}: No es un archivo válido. Por favor, intente nuevamente.`;
+      txtInvalidFile.style.color = "red";
+      errorTxt.appendChild(txtInvalidFile);
+    }
   }
 };
 
@@ -170,18 +170,18 @@ const imgFromUrl = (event) => {
   let imgUrl = imgUrlInput.value;
 
   if (imgUrl === "") {
-      noImg.textContent = "No has ingresado ninguna URL.";
-      noImg.style.color = "red";
-      errorTxt.appendChild(noImg);
+    noImg.textContent = "No has ingresado ninguna URL.";
+    noImg.style.color = "red";
+    errorTxt.appendChild(noImg);
   } else {
-        if (validUrl(imgUrl)) {
-          existingImage.src = imgUrl;
-        } else {
-          txtInvalidFile.textContent = `El link ingresado no es válido. Por favor, intente nuevamente.`;
-          txtInvalidFile.style.color = "red";
-          errorTxt.appendChild(txtInvalidFile);
-        }
+    if (validUrl(imgUrl)) {
+      existingImage.src = imgUrl;
+    } else {
+      txtInvalidFile.textContent = `El link ingresado no es válido. Por favor, intente nuevamente.`;
+      txtInvalidFile.style.color = "red";
+      errorTxt.appendChild(txtInvalidFile);
     }
+  }
 };
 
 //    FUNCTION TO CHANGE THE BACKGROUND COLOR IMAGE
@@ -191,14 +191,14 @@ const changeImageBackgroundColor = () => {
   let imgBgcSelected = document.getElementById("blend-mode-color-value");
   let imgBgcValue = imgBackgroundColor.value;
 
-    imgBgcSelected.textContent = `${imgBgcValue}`;
-    imgMemeContainer.style.backgroundColor = `${imgBgcValue}`;
+  imgBgcSelected.textContent = `${imgBgcValue}`;
+  imgMemeContainer.style.backgroundColor = `${imgBgcValue}`;
 };
 
 //    FUNCTION TO BLEND THE BACKGROUND COLOR OF THE IMAGE
 
 const changeBlendModeColor = () => {
-    existingImage.style.mixBlendMode = selectImgBlendMode.value;
+  existingImage.style.mixBlendMode = selectImgBlendMode.value;
 };
 
 //*********************FUNCTIONS OF THE TEXT MENU************************** 
@@ -217,7 +217,7 @@ const addTopText = () => {
 //    FUNCTION ADD BOTTOM TEXT
 
 const addBottomText = () => {
-  memeBottomText.textContent = bottomTextMeme.value; 
+  memeBottomText.textContent = bottomTextMeme.value;
 };
 
 //    FUNCTION TO REMOVE TEXT
@@ -233,9 +233,9 @@ const removeText = (checkbox, text) => {
 //    FUNTION TO ALIGN THE TEXT
 
 let changeTextAlign = (textAlign) => {
-    memeTexts.forEach((text) => {
-      text.style.textAlign = textAlign;
-    });
+  memeTexts.forEach((text) => {
+    text.style.textAlign = textAlign;
+  });
 };
 
 //    FUNCTION TO CHANGE THE TEXT COLOR
@@ -245,10 +245,10 @@ const changeTextColor = () => {
   let textColorSelected = document.getElementById("text-color-value");
   let textColorValue = textColor.value;
 
-      textColorSelected.textContent = `${textColorValue}`;
-      memeTexts.forEach((text) => {
-        text.style.color = `${textColorValue}`;
-    });
+  textColorSelected.textContent = `${textColorValue}`;
+  memeTexts.forEach((text) => {
+    text.style.color = `${textColorValue}`;
+  });
 };
 
 //    FUNCTION TO CHANGE THE TEXT BACKGROUND COLOR
@@ -257,36 +257,46 @@ const changeTextBackgroundColor = () => {
   let textBackGroundColor = document.getElementById("text-bcg-color");
   let textBgcValue = textBackGroundColor.value;
   let textBgcSelected = document.getElementById("text-background-color-value");
-      textBgcSelected.textContent = `${textBgcValue}`;
-      memeTexts.forEach((text) => {
-        text.style.backgroundColor = `${textBgcValue}`;
+
+  textBgcSelected.textContent = `${textBgcValue}`;
+
+  let checkboxState = document.getElementById("remove-txt-bcg-color").checked;
+
+  if (!checkboxState) {
+    memeTexts.forEach((text) => {
+      text.style.backgroundColor = `${textBgcValue}`;
     });
+  }
+
 };
 
 //    FUNCTION TO REMOVE THE BACKGROUND COLOR
-/*
+
 let textBackGroundColor = document.getElementById("text-bcg-color").value;
 
 const removeTextBgc = () => {
-  let currentTextBackGroundColor = textBackGroundColor;
-  if (checkToRemoveTextBgc.checked) {
-    console.log ("estoy chequeado")
-      memeTexts.forEach((text) => {
-        text.style.backgroundColor = "transparent";
+  let checkboxState = document.getElementById("remove-txt-bcg-color").checked;
+
+  if (checkboxState) {
+    memeTexts.forEach((text) => {
+      text.style.backgroundColor = "transparent";
     });
-  } else {
-    console.log("no estoy chequeado")
-      memeTexts.forEach((text) => {
-        text.style.backgroundColor = `${currentTextBackGroundColor}`;
-  });}
-}*/
+    return
+  }
+
+  memeTexts.forEach((text) => {
+    text.style.backgroundColor = document.getElementById("text-bcg-color").value;
+  });
+  return
+}
 
 //    FUNCTION TO CHANGE THE FONT FAMILY 
 
 const changeFontFamily = () => {
-    memeTexts.forEach((text) => {
-      text.style.fontFamily = `${selectFontFamily.value}`;
-})};
+  memeTexts.forEach((text) => {
+    text.style.fontFamily = `${selectFontFamily.value}`;
+  })
+};
 
 //    FUNCTION TO CHANGE THE TEXT OUTLINE
 
@@ -294,23 +304,25 @@ const changeTextOutline = (outline) => {
   if (outline === 'none') {
     memeTexts.forEach((text) => {
       text.style.textShadow = "none";
-      });
-    } else if (outline === 'lighter') {
+    });
+  } else if (outline === 'lighter') {
     memeTexts.forEach((text) => {
       text.style.textShadow = "3px 3px 5px #FFFFFF";
-      });
-    } else if (outline === 'darker') {
+    });
+  } else if (outline === 'darker') {
     memeTexts.forEach((text) => {
       text.style.textShadow = "3px 3px 5px black";
     });
-}};
+  }
+};
 
 //    FUNCTION TO CHANGE THE TEXT SPACING
 
 const changeTextSpacing = () => {
-    memeTexts.forEach((text) => {
-      text.style.lineHeight = `${selectTextSpacing.value}`;
-})};
+  memeTexts.forEach((text) => {
+    text.style.lineHeight = `${selectTextSpacing.value}`;
+  })
+};
 
 //***************************EVENT LISTENER********************************
 
@@ -333,23 +345,23 @@ selectImgBlendMode.addEventListener("change", changeBlendModeColor);
 //    TEXT MENU EVENTS
 
 topTextMeme.addEventListener("input", addTopText);
-checkToRemoveTopText.addEventListener("click", (e) => { removeText(checkToRemoveTopText, memeTopText);  });
+checkToRemoveTopText.addEventListener("click", (e) => { removeText(checkToRemoveTopText, memeTopText); });
 
 bottomTextMeme.addEventListener("input", addBottomText);
-checkToRemoveBottomText.addEventListener("click", (e) => { removeText(checkToRemoveBottomText, memeBottomText);  });
+checkToRemoveBottomText.addEventListener("click", (e) => { removeText(checkToRemoveBottomText, memeBottomText); });
 
 selectFontFamily.addEventListener("change", changeFontFamily);
 
-btnLeftAlign.addEventListener("click", (e) => { changeTextAlign('left');  });
-btnCenterAlign.addEventListener("click", (e) => {  changeTextAlign('center');  });
-btnRightAlign.addEventListener("click", (e) => {  changeTextAlign('right');  });
+btnLeftAlign.addEventListener("click", (e) => { changeTextAlign('left'); });
+btnCenterAlign.addEventListener("click", (e) => { changeTextAlign('center'); });
+btnRightAlign.addEventListener("click", (e) => { changeTextAlign('right'); });
 
 btnTextColor.addEventListener("input", changeTextColor);
 btnTextBackGroundColor.addEventListener("input", changeTextBackgroundColor);
-//checkToRemoveTextBgc.addEventListener("input", removeTextBgc);
+checkToRemoveTextBgc.addEventListener("input", removeTextBgc);
 
-btnNoOutline.addEventListener("click", (e) => { changeTextOutline('none');  })
-btnLightOutline.addEventListener("click", (e) => { changeTextOutline('lighter');  })
-btnDarkOutline.addEventListener("click", (e) => { changeTextOutline('darker');  })
+btnNoOutline.addEventListener("click", (e) => { changeTextOutline('none'); })
+btnLightOutline.addEventListener("click", (e) => { changeTextOutline('lighter'); })
+btnDarkOutline.addEventListener("click", (e) => { changeTextOutline('darker'); })
 
 selectTextSpacing.addEventListener("change", changeTextSpacing);
