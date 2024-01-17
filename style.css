@@ -68,6 +68,7 @@ main {
     grid-area: main;
     display: flex;
     justify-content: center;
+    flex-flow: column wrap;
 }
 
 footer {
@@ -286,7 +287,7 @@ label {
 }
 
 .btn-container {
-    padding-top: 1em;
+    padding-block: 0.5em;
 }
 
 .one-input {
@@ -447,6 +448,7 @@ label {
     color: var(--clr-meme);
     background-color: var(--clr-bgc-meme);
     padding-block: 0.2rem;
+    padding-inline: 1rem;
 }
 
 #img-container {
@@ -454,7 +456,8 @@ label {
     max-height: 75%;
     background-color: transparent;
     margin: 0 auto;
-    object-fit: contain;
+    object-fit: cover;
+    flex-grow: 1;
 }
 
 #btn-download {
@@ -553,13 +556,13 @@ label {
 }
 
 
-#text-font-family {
+#select-text-font-family {
     width: 80%;
 }
 
 .align-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: 1rem;
 }
 
@@ -613,7 +616,7 @@ label {
     }
 
     main {
-    height: 80%;
+    height: 100%;
     width: 100vw;
     }
 
@@ -642,5 +645,9 @@ label {
     .close-window {
     display: flex;
     justify-content: center;
+    }
+
+    .grid-cols-a {
+    grid-template-columns: 30% 50%;
     }
 }

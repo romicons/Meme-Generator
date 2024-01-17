@@ -18,35 +18,60 @@ let selectImgBlendMode = document.getElementById("blend-mode-select");
 //    TEXT EDITOR
 
 let topTextMeme = document.getElementById("top-text-input");
+const checkToRemoveTopText = document.getElementById("remove-top-text");
+
 let bottomTextMeme = document.getElementById("bottom-text-input");
+const checkToRemoveBottomText = document.getElementById("remove-bottom-text");
+
+const selectFontFamily = document.getElementById("select-text-font-family");
+
+const btnLeftAlign = document.getElementById("left-align-btn");
+const btnCenterAlign = document.getElementById("center-align-btn");
+const btnRightAlign = document.getElementById("right-align-btn");
+
 const btnTextColor = document.getElementById("text-color-label");
 const btnTextBackGroundColor = document.getElementById("text-bgc-color-label");
+const checkToRemoveTextBgc = document.getElementById("remove-txt-bcg-color");
 
+const btnNoOutline = document.getElementById("no-outline-btn");
+const btnLightOutline = document.getElementById("light-outline-btn");
+const btnDarkOutline = document.getElementById("dark-outline-btn");
+
+const selectTextSpacing = document.getElementById("line-height-select");
 
 //***********************FUNCTIONS OF NAVIGATION***************************
+
+
+const setStyleToNone = (element) => {
+  element.style.display = "none";
+}
+
+const setStyleToGrid = (element) => {
+  element.style.display = "grid";
+}
 
 //    OPEN IMAGE EDITOR
 
 const openImgEditor = () => {
-  editTextMenu.style.display = "none";
-  editImgMenu.style.display = "grid";
+  setStyleToGrid(editImgMenu);
+  setStyleToNone(editTextMenu);
 };
 
 //    OPEN TEXT EDITOR
 
 const openTextEditor = () => {
-  editImgMenu.style.display = "none";
-  editTextMenu.style.display = "grid";
+  setStyleToGrid(editTextMenu);
+  setStyleToNone(editImgMenu);
 };
 
 //    CLOSE MENU
 
 const closeImgMenu = () => {
-  editImgMenu.style.display = "none";
+  setStyleToNone(editImgMenu)
 };
 
 const closeTextMenu = () => {
-  editTextMenu.style.display = "none";
+  setStyleToNone(editTextMenu);
 };
 
 //    FUNCTION DARK/LIGHT MODE
@@ -159,7 +184,7 @@ const imgFromUrl = (event) => {
     }
 };
 
-//    FUNCTION BACKGROUND COLOR IMAGE
+//    FUNCTION TO CHANGE THE BACKGROUND COLOR IMAGE
 
 const changeImageBackgroundColor = () => {
   let imgBackgroundColor = document.getElementById("blend-mode-bgc");
@@ -170,59 +195,10 @@ const changeImageBackgroundColor = () => {
     imgMemeContainer.style.backgroundColor = `${imgBgcValue}`;
 };
 
-//    FUNCTION BLEND BACKGROUND COLOR
+//    FUNCTION TO BLEND THE BACKGROUND COLOR OF THE IMAGE
 
 const changeBlendModeColor = () => {
-  let blendModeSelected = selectImgBlendMode.value;
-
-    if (blendModeSelected === 'unset') {
-      existingImage.style.mixBlendMode = "normal";
-    }
-    else if (blendModeSelected === 'lighten') {
-      existingImage.style.mixBlendMode = "lighten";
-    }
-    else if (blendModeSelected === 'plus-lighter') {
-      existingImage.style.mixBlendMode = "plus-lighter";
-    }
-    else if (blendModeSelected === 'hard-light') {
-      existingImage.style.mixBlendMode = "hard-light";
-    }
-    else if (blendModeSelected === 'soft-light') {
-      existingImage.style.mixBlendMode = "soft-light";
-    }
-    else if (blendModeSelected === 'darken') {
-      existingImage.style.mixBlendMode = "darken";
-    }
-    else if (blendModeSelected === 'plus-darker') {
-      existingImage.style.mixBlendMode = "plus-darker";
-    }
-    else if (blendModeSelected === 'difference') {
-      existingImage.style.mixBlendMode = "difference";
-    }
-    else if (blendModeSelected === 'luminosity') {
-      existingImage.style.mixBlendMode = "luminosity";
-    }
-    else if (blendModeSelected === 'multiply') {
-      existingImage.style.mixBlendMode = "multiply";
-    }
-    else if (blendModeSelected === 'overlay') {
-      existingImage.style.mixBlendMode = "overlay";
-    }
-    else if (blendModeSelected === 'color-dodge') {
-      existingImage.style.mixBlendMode = "color-dodge";
-    }
-    else if (blendModeSelected === 'color-burn') {
-      existingImage.style.mixBlendMode = "color-burn";
-    }
-    else if (blendModeSelected === 'exclusion') {
-      existingImage.style.mixBlendMode = "exclusion";
-    }
-    else if (blendModeSelected === 'saturation') {
-      existingImage.style.mixBlendMode = "saturation";
-    }
-    else if (blendModeSelected === 'hue') {
-      existingImage.style.mixBlendMode = "hue";
-    };
+    existingImage.style.mixBlendMode = selectImgBlendMode.value;
 };
 
 //*********************FUNCTIONS OF THE TEXT MENU************************** 
@@ -230,35 +206,118 @@ const changeBlendModeColor = () => {
 let memeTopText = document.getElementById("top-txt");
 let memeBottomText = document.getElementById("bottom-txt");
 
-//    FUNCTION TEXT COLOR
+let memeTexts = [memeTopText, memeBottomText];
+
+//    FUNCTION ADD TOP TEXT
+
+const addTopText = () => {
+  memeTopText.textContent = topTextMeme.value;
+};
+
+//    FUNCTION ADD BOTTOM TEXT
+
+const addBottomText = () => {
+  memeBottomText.textContent = bottomTextMeme.value; 
+};
+
+//    FUNCTION TO REMOVE TEXT
+
+const removeText = (checkbox, text) => {
+  if (checkbox.checked) {
+    setStyleToNone(text);
+  } else {
+    text.style.display = "block";
+  };
+};
+
+//    FUNTION TO ALIGN THE TEXT
+
+let changeTextAlign = (textAlign) => {
+    memeTexts.forEach((text) => {
+      text.style.textAlign = textAlign;
+    });
+};
+
+//    FUNCTION TO CHANGE THE TEXT COLOR
 
 const changeTextColor = () => {
   let textColor = document.getElementById("text-color-input");
   let textColorSelected = document.getElementById("text-color-value");
   let textColorValue = textColor.value;
 
-    textColorSelected.textContent = `${textColorValue}`;
-    memeTopText.style.color = `${textColorValue}`;
-    memeBottomText.style.color = `${textColorValue}`;
-}
+      textColorSelected.textContent = `${textColorValue}`;
+      memeTexts.forEach((text) => {
+        text.style.color = `${textColorValue}`;
+    });
+};
 
-//    FUNCTION TEXT BACKGROUND COLOR
+//    FUNCTION TO CHANGE THE TEXT BACKGROUND COLOR
 
 const changeTextBackgroundColor = () => {
   let textBackGroundColor = document.getElementById("text-bcg-color");
-  let textBgcSelected = document.getElementById("text-background-color-value");
   let textBgcValue = textBackGroundColor.value;
+  let textBgcSelected = document.getElementById("text-background-color-value");
+      textBgcSelected.textContent = `${textBgcValue}`;
+      memeTexts.forEach((text) => {
+        text.style.backgroundColor = `${textBgcValue}`;
+    });
+};
 
-    textBgcSelected.textContent = `${textBgcValue}`;
-    memeTopText.style.backgroundColor = `${textBgcValue}`;
-    memeBottomText.style.backgroundColor = `${textBgcValue}`;
-}
+//    FUNCTION TO REMOVE THE BACKGROUND COLOR
+/*
+let textBackGroundColor = document.getElementById("text-bcg-color").value;
+
+const removeTextBgc = () => {
+  let currentTextBackGroundColor = textBackGroundColor;
+  if (checkToRemoveTextBgc.checked) {
+    console.log ("estoy chequeado")
+      memeTexts.forEach((text) => {
+        text.style.backgroundColor = "transparent";
+    });
+  } else {
+    console.log("no estoy chequeado")
+      memeTexts.forEach((text) => {
+        text.style.backgroundColor = `${currentTextBackGroundColor}`;
+  });}
+}*/
+
+//    FUNCTION TO CHANGE THE FONT FAMILY 
+
+const changeFontFamily = () => {
+    memeTexts.forEach((text) => {
+      text.style.fontFamily = `${selectFontFamily.value}`;
+})};
+
+//    FUNCTION TO CHANGE THE TEXT OUTLINE
+
+const changeTextOutline = (outline) => {
+  if (outline === 'none') {
+    memeTexts.forEach((text) => {
+      text.style.textShadow = "none";
+      });
+    } else if (outline === 'lighter') {
+    memeTexts.forEach((text) => {
+      text.style.textShadow = "3px 3px 5px #FFFFFF";
+      });
+    } else if (outline === 'darker') {
+    memeTexts.forEach((text) => {
+      text.style.textShadow = "3px 3px 5px black";
+    });
+}};
+
+//    FUNCTION TO CHANGE THE TEXT SPACING
+
+const changeTextSpacing = () => {
+    memeTexts.forEach((text) => {
+      text.style.lineHeight = `${selectTextSpacing.value}`;
+})};
 
 //***************************EVENT LISTENER********************************
 
 //    DOM EVENTS
 
 btnImgMenu.addEventListener("click", openImgEditor);
+
 btnTextMenu.addEventListener("click", openTextEditor);
 btncloseImgMenu.addEventListener("click", closeImgMenu);
 btncloseTextMenu.addEventListener("click", closeTextMenu);
@@ -273,5 +332,24 @@ selectImgBlendMode.addEventListener("change", changeBlendModeColor);
 
 //    TEXT MENU EVENTS
 
+topTextMeme.addEventListener("input", addTopText);
+checkToRemoveTopText.addEventListener("click", (e) => { removeText(checkToRemoveTopText, memeTopText);  });
+
+bottomTextMeme.addEventListener("input", addBottomText);
+checkToRemoveBottomText.addEventListener("click", (e) => { removeText(checkToRemoveBottomText, memeBottomText);  });
+
+selectFontFamily.addEventListener("change", changeFontFamily);
+
+btnLeftAlign.addEventListener("click", (e) => { changeTextAlign('left');  });
+btnCenterAlign.addEventListener("click", (e) => {  changeTextAlign('center');  });
+btnRightAlign.addEventListener("click", (e) => {  changeTextAlign('right');  });
+
 btnTextColor.addEventListener("input", changeTextColor);
 btnTextBackGroundColor.addEventListener("input", changeTextBackgroundColor);
+//checkToRemoveTextBgc.addEventListener("input", removeTextBgc);
+
+btnNoOutline.addEventListener("click", (e) => { changeTextOutline('none');  })
+btnLightOutline.addEventListener("click", (e) => { changeTextOutline('lighter');  })
+btnDarkOutline.addEventListener("click", (e) => { changeTextOutline('darker');  })
+
+selectTextSpacing.addEventListener("change", changeTextSpacing);
