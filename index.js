@@ -1,54 +1,4 @@
-//****************************DOM ELEMENTS*********************************
-
-//    NAVIGATION
-
-const btnImgMenu = document.getElementById("btn-img-menu");
-const btnTextMenu = document.getElementById("btn-text-menu");
-const editImgMenu = document.getElementById("img-editor-menu");
-const editTextMenu = document.getElementById("text-editor-menu");
-const btncloseImgMenu = document.getElementById("close-img-menu");
-const btncloseTextMenu = document.getElementById("close-text-menu");
-
-//    IMAGE EDITOR
-
-let imgMemeContainer = document.getElementById("canvas");
-
-const uploadImg = document.querySelector("#upload-meme-img");
-const imgUrlInput = document.getElementById("url-img-input");
-
-const btnImgBackgroundColor = document.getElementById("blend-mode-bgc-label");
-let selectImgBlendMode = document.getElementById("blend-mode-select");
-
-//    TEXT EDITOR
-
-let topTextMeme = document.getElementById("top-text-input");
-const checkToRemoveTopText = document.getElementById("remove-top-text");
-
-let bottomTextMeme = document.getElementById("bottom-text-input");
-const checkToRemoveBottomText = document.getElementById("remove-bottom-text");
-
-const selectFontFamily = document.getElementById("select-text-font-family");
-
-const inputFontSize = document.getElementById("text-size-input");
-
-const btnLeftAlign = document.getElementById("left-align-btn");
-const btnCenterAlign = document.getElementById("center-align-btn");
-const btnRightAlign = document.getElementById("right-align-btn");
-
-const btnTextColor = document.getElementById("text-color-label");
-const btnTextBackGroundColor = document.getElementById("text-bgc-color-label");
-const checkToRemoveTextBgc = document.getElementById("remove-txt-bcg-color");
-
-const btnNoOutline = document.getElementById("no-outline-btn");
-const btnLightOutline = document.getElementById("light-outline-btn");
-const btnDarkOutline = document.getElementById("dark-outline-btn");
-
-const inputTextPadding = document.getElementById("padding-input");
-
-const selectTextLineHeigth = document.getElementById("line-height-select");
-
 //***********************FUNCTIONS OF NAVIGATION***************************
-
 
 const setStyleToNone = (element) => {
   element.style.display = "none";
@@ -61,25 +11,25 @@ const setStyleToGrid = (element) => {
 //    OPEN IMAGE EDITOR
 
 const openImgEditor = () => {
-  setStyleToGrid(editImgMenu);
-  setStyleToNone(editTextMenu);
+  setStyleToGrid(document.getElementById("img-editor-menu"));
+  setStyleToNone(document.getElementById("text-editor-menu"));
 };
 
 //    OPEN TEXT EDITOR
 
 const openTextEditor = () => {
-  setStyleToGrid(editTextMenu);
-  setStyleToNone(editImgMenu);
+  setStyleToGrid(document.getElementById("text-editor-menu"));
+  setStyleToNone(document.getElementById("img-editor-menu"));
 };
 
 //    CLOSE MENU
 
 const closeImgMenu = () => {
-  setStyleToNone(editImgMenu)
+  setStyleToNone(document.getElementById("img-editor-menu"))
 };
 
 const closeTextMenu = () => {
-  setStyleToNone(editTextMenu);
+  setStyleToNone(document.getElementById("text-editor-menu"));
 };
 
 //    FUNCTION DARK/LIGHT MODE
@@ -96,15 +46,6 @@ const disableDarkMode = () => {
   document.body.classList.remove('darkmode');
   localStorage.setItem('darkMode', false);
 }
-
-darkModeToggle.addEventListener('click', () => {
-  darkMode = !darkMode;
-  if (darkMode) {
-    enableDarkMode();
-  } else {
-    disableDarkMode();
-  }
-});
 
 //*********************FUNCTIONS OF THE IMAGE MENU*************************
 
@@ -172,7 +113,7 @@ const imgFromUrl = (event) => {
   }
 
   event.preventDefault()
-  let imgUrl = imgUrlInput.value;
+  let imgUrl = document.getElementById("url-img-input").value;
 
   if (imgUrl === "") {
     noImg.textContent = "No has ingresado ninguna URL.";
@@ -189,6 +130,10 @@ const imgFromUrl = (event) => {
   }
 };
 
+//    FUNCTION TO DOWNLOAD THE IMAGE
+
+let imgMemeContainer = document.getElementById("canvas");
+
 //    FUNCTION TO CHANGE THE BACKGROUND COLOR IMAGE
 
 const changeImageBackgroundColor = () => {
@@ -201,7 +146,27 @@ const changeImageBackgroundColor = () => {
 //    FUNCTION TO BLEND THE BACKGROUND COLOR OF THE IMAGE
 
 const changeBlendModeColor = () => {
-  existingImage.style.mixBlendMode = selectImgBlendMode.value;
+  existingImage.style.mixBlendMode = document.getElementById("blend-mode-select").value;
+};
+
+//    FUNCTION TO CHANGE THE IMAGE ACCORDING TO FILTERS 
+
+const applyFilters = () => {
+  existingImage.style.filter = `brightness(${document.getElementById("brightness-slider").value}) opacity(${document.getElementById("opacity-slider").value}) blur(${document.getElementById("blur-slider").value}px) contrast(${document.getElementById("contrast-slider").value}%) grayscale(${document.getElementById("grayscale-slider").value}%) hue-rotate(${document.getElementById("hue-slider").value}deg) sepia(${document.getElementById("sepia-slider").value}%) saturate(${document.getElementById("saturate-slider").value}%) invert(${document.getElementById("invert-slider").value})`;
+};
+
+const revertFilters = () => {
+document.getElementById("brightness-slider").value = 1;
+document.getElementById("opacity-slider").value = 1;
+document.getElementById("contrast-slider").value = 100;
+document.getElementById("blur-slider").value = 0;
+document.getElementById("grayscale-slider").value = 0;
+document.getElementById("sepia-slider").value = 0;
+document.getElementById("hue-slider").value = 0;
+document.getElementById("saturate-slider").value = 100;
+document.getElementById("invert-slider").value = 0;
+
+applyFilters();
 };
 
 //*********************FUNCTIONS OF THE TEXT MENU************************** 
@@ -214,13 +179,13 @@ let memeTexts = [memeTopText, memeBottomText];
 //    FUNCTION ADD TOP TEXT
 
 const addTopText = () => {
-  memeTopText.textContent = topTextMeme.value;
+  memeTopText.textContent = document.getElementById("top-text-input").value;
 };
 
 //    FUNCTION ADD BOTTOM TEXT
 
 const addBottomText = () => {
-  memeBottomText.textContent = bottomTextMeme.value;
+  memeBottomText.textContent = document.getElementById("bottom-text-input").value;
 };
 
 //    FUNCTION TO REMOVE TEXT
@@ -229,14 +194,14 @@ const removeText = (checkbox, text) => {
   if (checkbox.checked) {
     setStyleToNone(text);
   } else {
-    text.style.display = "block";
+    setStyleToGrid(text);
   };
 };
 
 //    FUNCTION TO CHANGE THE FONT SIZE
 
 const changeFontSize = () => {
-  let valueToNumber =  parseInt(inputFontSize.value);
+  let valueToNumber =  parseInt(document.getElementById("text-size-input").value);
 
   memeTexts.forEach((text) => {
     text.style.fontSize = `${valueToNumber}px`;
@@ -303,7 +268,7 @@ const removeTextBgc = () => {
 
 const changeFontFamily = () => {
   memeTexts.forEach((text) => {
-    text.style.fontFamily = `${selectFontFamily.value}`;
+    text.style.fontFamily = `${document.getElementById("select-text-font-family").value}`;
   })
 };
 
@@ -328,7 +293,7 @@ const changeTextOutline = (outline) => {
 //    FUNCTION TO CHANGE THE TEXT PADDING
 
 const changeTextPadding = () => {
-  let valueToNumber =  parseInt(inputTextPadding.value);
+  let valueToNumber =  parseInt(document.getElementById("padding-input").value);
 
   memeTexts.forEach((text) => {
     text.style.height = `calc(15% + ${valueToNumber}px)`;
@@ -340,7 +305,7 @@ const changeTextPadding = () => {
 
 const changeLineHeight = () => {
   memeTexts.forEach((text) => {
-    text.style.lineHeight = `${selectTextLineHeigth.value}`;
+    text.style.lineHeight = `${document.getElementById("line-height-select").value}`;
   })
 };
 
@@ -348,43 +313,65 @@ const changeLineHeight = () => {
 
 //    DOM EVENTS
 
-btnImgMenu.addEventListener("click", openImgEditor);
-btnTextMenu.addEventListener("click", openTextEditor);
-btncloseImgMenu.addEventListener("click", closeImgMenu);
-btncloseTextMenu.addEventListener("click", closeTextMenu);
+document.getElementById("btn-img-menu").addEventListener("click", openImgEditor);
+document.getElementById("btn-text-menu").addEventListener("click", openTextEditor);
+
+document.getElementById("close-img-menu").addEventListener("click", closeImgMenu);
+document.getElementById("close-text-menu").addEventListener("click", closeTextMenu);
+
+darkModeToggle.addEventListener('click', () => {
+  darkMode = !darkMode;
+  if (darkMode) {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+});
 
 //    IMAGE MENU EVENTS
 
-uploadImg.addEventListener("change", updateImageDisplay);
-imgUrlInput.addEventListener("input", imgFromUrl);
+document.querySelector("#upload-meme-img").addEventListener("change", updateImageDisplay);
+document.getElementById("url-img-input").addEventListener("input", imgFromUrl);
 
-btnImgBackgroundColor.addEventListener("input", changeImageBackgroundColor);
-selectImgBlendMode.addEventListener("change", changeBlendModeColor);
+document.getElementById("blend-mode-bgc-label").addEventListener("input", changeImageBackgroundColor);
+document.getElementById("blend-mode-select").addEventListener("change", changeBlendModeColor);
+
+document.getElementById("brightness-slider").addEventListener("change", applyFilters);
+document.getElementById("opacity-slider").addEventListener("change", applyFilters);
+document.getElementById("contrast-slider").addEventListener("change", applyFilters);
+document.getElementById("blur-slider").addEventListener("change", applyFilters);
+document.getElementById("grayscale-slider").addEventListener("change", applyFilters);
+document.getElementById("sepia-slider").addEventListener("change", applyFilters);
+document.getElementById("hue-slider").addEventListener("change", applyFilters);
+document.getElementById("saturate-slider").addEventListener("change", applyFilters);
+document.getElementById("invert-slider").addEventListener("change", applyFilters);
+
+document.getElementById("btn-default-filters").addEventListener("click", revertFilters);
 
 //    TEXT MENU EVENTS
 
-topTextMeme.addEventListener("input", addTopText);
-checkToRemoveTopText.addEventListener("click", (e) => { removeText(checkToRemoveTopText, memeTopText); });
+document.getElementById("top-text-input").addEventListener("input", addTopText);
+document.getElementById("remove-top-text").addEventListener("click", (e) => { removeText(document.getElementById("remove-top-text"), memeTopText); });
 
-bottomTextMeme.addEventListener("input", addBottomText);
-checkToRemoveBottomText.addEventListener("click", (e) => { removeText(checkToRemoveBottomText, memeBottomText); });
+document.getElementById("bottom-text-input").addEventListener("input", addBottomText);
+document.getElementById("remove-bottom-text").addEventListener("click", (e) => { removeText(document.getElementById("remove-bottom-text"), memeBottomText); });
 
-selectFontFamily.addEventListener("change", changeFontFamily);
+document.getElementById("select-text-font-family").addEventListener("change", changeFontFamily);
 
-inputFontSize.addEventListener("input", changeFontSize);
+document.getElementById("text-size-input").addEventListener("input", changeFontSize);
 
-btnLeftAlign.addEventListener("click", (e) => { changeTextAlign('left'); });
-btnCenterAlign.addEventListener("click", (e) => { changeTextAlign('center'); });
-btnRightAlign.addEventListener("click", (e) => { changeTextAlign('right'); });
+document.getElementById("left-align-btn").addEventListener("click", (e) => { changeTextAlign('left'); });
+document.getElementById("center-align-btn").addEventListener("click", (e) => { changeTextAlign('center'); });
+document.getElementById("right-align-btn").addEventListener("click", (e) => { changeTextAlign('right'); });
 
-btnTextColor.addEventListener("input", changeTextColor);
-btnTextBackGroundColor.addEventListener("input", changeTextBackgroundColor);
-checkToRemoveTextBgc.addEventListener("input", removeTextBgc);
+document.getElementById("text-color-label").addEventListener("input", changeTextColor);
+document.getElementById("text-bgc-color-label").addEventListener("input", changeTextBackgroundColor);
+document.getElementById("remove-txt-bcg-color").addEventListener("input", removeTextBgc);
 
-btnNoOutline.addEventListener("click", (e) => { changeTextOutline('none'); })
-btnLightOutline.addEventListener("click", (e) => { changeTextOutline('lighter'); })
-btnDarkOutline.addEventListener("click", (e) => { changeTextOutline('darker'); })
+document.getElementById("no-outline-btn").addEventListener("click", (e) => { changeTextOutline('none'); })
+document.getElementById("light-outline-btn").addEventListener("click", (e) => { changeTextOutline('lighter'); })
+document.getElementById("dark-outline-btn").addEventListener("click", (e) => { changeTextOutline('darker'); })
 
-inputTextPadding.addEventListener("input", changeTextPadding);
+document.getElementById("padding-input").addEventListener("input", changeTextPadding);
 
-selectTextLineHeigth.addEventListener("change", changeLineHeight);
+document.getElementById("line-height-select").addEventListener("change", changeLineHeight);

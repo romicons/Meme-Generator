@@ -347,7 +347,7 @@ label {
 }
 
 
-.input-name {
+.input-range {
     height: 1.5em;
 }
 
@@ -441,6 +441,8 @@ label {
 }
 
 .meme-txt {
+    display: grid;
+    align-items: center;
     width: 100%;
     height: auto;
     text-align: center;
