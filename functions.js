@@ -123,9 +123,16 @@ const imgFromUrl = (event) => {
 };
   
 //    FUNCTION TO DOWNLOAD THE IMAGE
-  
-  let imgMemeContainer = document.getElementById("canvas");
-  
+
+let imgMemeContainer = document.getElementById("canvas");
+
+const downloadMeme = () => {
+        domtoimage.toBlob(document.getElementById("canvas"))
+            .then(function (blob) {
+                window.saveAs(blob, 'Your-meme.png');
+            });
+};
+
 //    FUNCTIONS TO MODIFY THE IMAGE
   
 const changeImageBackgroundColor = () => {
@@ -203,7 +210,7 @@ const changeTextColor = () => {
   
     textColorSelected.textContent = document.getElementById("text-color-input").value;
     memeTexts.forEach((text) => {
-      text.style.color = document.getElementById("text-color-input");
+      text.style.color = document.getElementById("text-color-input").value;
     });
 };
   

@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/9096056511.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
     <title>Generador de Memes</title>
 </head>
 <body>
@@ -38,7 +40,7 @@
     <!--CANVAS: IMAGE CONTAINER-->
 
     <main>
-        <div class="edit-download-wrapper">
+        <div id="download-img">
             <div id="canvas">
                     <p id="top-txt" class="meme-txt">TEXTO-SUPERIOR</p>
                     <img src="img/cheems-placeholder.jpeg" alt="" aria-label="Imagen de meme" id="img-container">
@@ -364,6 +366,6 @@
         </div>
     </footer>
 </body>
-<script src="main.js"></script>
 <script src="functions.js"></script>
+<script src="main.js"></script>
 </html>
