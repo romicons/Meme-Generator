@@ -621,6 +621,7 @@ label {
     main {
     height: 100%;
     width: 100vw;
+    padding-top: 1em;
     }
 
     aside {
@@ -633,6 +634,11 @@ label {
     footer {
     height: auto;
     padding-block: 1em;
+    }
+
+    #download-img {
+    width: 80vw;
+    margin: 0 auto;
     }
 
     #canvas {
