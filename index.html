@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/9096056511.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
     <title>Generador de Memes</title>
 </head>
 <body>
@@ -38,7 +40,7 @@
     <!--CANVAS: IMAGE CONTAINER-->
 
     <main>
-        <div class="edit-download-wrapper">
+        <div id="download-img">
             <div id="canvas">
                     <p id="top-txt" class="meme-txt">TEXTO-SUPERIOR</p>
                     <img src="img/cheems-placeholder.jpeg" alt="" aria-label="Imagen de meme" id="img-container">
@@ -121,40 +123,40 @@
                                 <div class="section-menu">
                                     <h3>Filtros</h3>
                                                     <div class="one-input">
-                                                        <label for="brightness-slider" class="input-name">BRILLO</label>
+                                                        <label for="brightness-slider" class="input-range">BRILLO</label>
                                                         <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1" tabindex="12">
                                                     </div>
                                                     <div class="one-input">
-                                                        <label for="opacity-slider" class="input-name">OPACIDAD</label>
+                                                        <label for="opacity-slider" class="input-range">OPACIDAD</label>
                                                         <input type="range" id="opacity-slider" min="0" max="1" value="1" step="0.1" tabindex="13">
                                                     </div>
                                                     <div class="one-input">
-                                                        <label for="contrast-slider" class="input-name">CONTRASTE</label>
+                                                        <label for="contrast-slider" class="input-range">CONTRASTE</label>
                                                         <input type="range" id="contrast-slider" min="100" max="1000" value="100" step="1" tabindex="14">
                                                     </div>
                                                     <div class="one-input">
-                                                        <label for="blur-slider" class="input-name">DESENFOQUE</label>
+                                                        <label for="blur-slider" class="input-range">DESENFOQUE</label>
                                                         <input type="range" id="blur-slider" min="0" max="10" value="0" step="0.1" tabindex="15">
                                                     </div>
                                                     <div class="one-input">
-                                                        <label for="grayscale-slider" class="input-name">ESCALA DE GRISES</label>
+                                                        <label for="grayscale-slider" class="input-range">ESCALA DE GRISES</label>
                                                         <input type="range" id="grayscale-slider" min="0" max="100" value="0" step="1" tabindex="16">
                                                     </div>
                                                     <div class="one-input">
-                                                        <label for="sepia-slider" class="input-name">SEPIA</label>
+                                                        <label for="sepia-slider" class="input-range">SEPIA</label>
                                                         <input type="range" id="sepia-slider" min="0" max="100" value="0" step="1" tabindex="17">
                                                     </div>
                                                     <div class="one-input">
-                                                        <label for="hue-slider" class="input-name">HUE</label>
+                                                        <label for="hue-slider" class="input-range">HUE</label>
                                                         <input type="range" id="hue-slider" min="0" max="359" value="0" step="1" tabindex="18">
                                                     </div>
                                                     <div class="one-input">
-                                                        <label for="saturate-slider" class="input-name">SATURADO</label>
+                                                        <label for="saturate-slider" class="input-range">SATURADO</label>
                                                         <input type="range" id="saturate-slider" min="100" max="1000" value="100" step="10" tabindex="19">
                                                     </div>
                                                     <div class="one-input">
-                                                        <label for="invert-slider" class="input-name">NEGATIVO</label>
-                                                        <input type="range" id="invert-slider" min="0" max="1" value="1" step="0.1" tabindex="20">
+                                                        <label for="invert-slider" class="input-range">NEGATIVO</label>
+                                                        <input type="range" id="invert-slider" min="0" max="1" value="0" step="0.1" tabindex="20">
                                                     </div>
                                                     <div class="btn-container">
                                                         <button id="btn-default-filters" type="button" tabindex="21">Reestablecer filtros</button>
@@ -364,5 +366,6 @@
         </div>
     </footer>
 </body>
-<script src="index.js"></script>
+<script src="functions.js"></script>
+<script src="main.js"></script>
 </html>

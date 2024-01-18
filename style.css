@@ -287,7 +287,7 @@ label {
 }
 
 .btn-container {
-    padding-block: 0.5em;
+    padding-block: 1.2em;
 }
 
 .one-input {
@@ -347,7 +347,7 @@ label {
 }
 
 
-.input-name {
+.input-range {
     height: 1.5em;
 }
 
@@ -424,15 +424,16 @@ label {
 
     /* MEME CONTAINER */
 
-.edit-download-wrapper {
-    padding-block: 1em;
+#download-img {
+    width: 40vw;
+    margin: 0 auto;
 }
 
 #canvas {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    width: 45vw;
+    width: 40vw;
     height: 57vh;
     background-color: white;
     margin: 0 auto;
@@ -441,6 +442,8 @@ label {
 }
 
 .meme-txt {
+    display: grid;
+    align-items: center;
     width: 100%;
     height: auto;
     text-align: center;
