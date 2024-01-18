@@ -21,7 +21,7 @@
 
 <p align="center">¡Bienvenide! Frente a esta dura realidad los memes se han convertido en un medio de catarsis fascinante, ¿verdad? ¡Y qué mejor que poder participar de este fenómeno con tus propias creaciones!</p>
 
-<h2 align="center">¿Qué podrás con él?</h2>
+<h2 align="center">¿Qué podrás hacer con él?</h2>
 
 
 <p> Esta web app te permitirá subir <img alt="Static Badge" src="https://img.shields.io/badge/IMAGENES-%2351425f"> (desde tu propio dispositivo o por medio de una URL), editarlas y acompañarlas con <img alt="Static Badge" src="https://img.shields.io/badge/TEXTOS-%23cad1c3">, también customizables.</p>
