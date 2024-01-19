@@ -24,7 +24,7 @@
 <h2 align="center">¿Qué podrás hacer con él?</h2>
 
 
-<p> Esta web app te permitirá subir <img alt="Imagenes" src="https://img.shields.io/badge/IMAGENES-%2351425f">, editarlas y acompañarlas con <img alt="Textos" src="https://img.shields.io/badge/TEXTOS-%23cad1c3">, también customizables.</p>
+<p> Esta web app te permitirá subir <img alt="Imagenes" src="https://img.shields.io/badge/IMAGENES-%2351425f">, editarlas y acompañarlas con tus propios <img alt="Textos" src="https://img.shields.io/badge/TEXTOS-%23cad1c3">.</p>
 <p>Gracias a su práctica <img alt="Navegabilidad" src="https://img.shields.io/badge/NAVEGABILIDAD-%23948e99">, podrás activar el modo nocturno cuando prefieras y alternar fácilmente entre los menús mientras diseñas tus memes y visualizas los cambios en tiempo real.</p>
 
 <h2 align="center">Menú de Imagen</h2>
@@ -36,13 +36,13 @@
 </div>
 
 
-<p> Sus funciones <img alt="Funciones" src="https://img.shields.io/badge/FUNCIONES-%23e7eed0"> te permitirán:</p>
+<p> Sus <img alt="Funciones" src="https://img.shields.io/badge/FUNCIONES-%23e7eed0"> te permitirán:</p>
 
-📤 Añadir tu imagen: Por medio de una URL o desde dispositivo.
+📤 Añadir tu imagen: Por medio de una URL o desde tu dispositivo.
   
 🎨 Modificar su color de fondo.
 
-🔄 Cambiar el modo de mezcla de la imagen con el fondo con filtros predeterminados:
+🔄 Cambiar el modo de mezcla de tu imagen con el fondo por medio de filtros predeterminados:
 
 <ul>
   
@@ -115,7 +115,7 @@
 
 🔠 Cambiar la fuente de tus textos.
 
-📐Modificar el tamaño de la fuente de tus textos.
+📐 Modificar el tamaño de la fuente de tus textos.
 
 📝 Elegir el color de tus textos.
 
@@ -123,14 +123,14 @@
 
 ↕️ Aumentar o disminuir el tamaño que ocupan tus textos.
 
-📐 Modificar alto de línea de tus textos.
+📐 Modificar el alto de línea de tus textos.
 
 </ul>
 
 <h2 align="center">Descarga tus Creaciones</h2>
 
 
-<p> Por último, gracias a las librerias de <img alt="DomToImage" src="https://img.shields.io/badge/DomToImage-%232e1437"> y <img alt="FileSaver.Js" src="https://img.shields.io/badge/FileSaver-%23e7eed0"> podrás descargar tus memes en formato .png.</p>
+<p> Por último, gracias a las librerias de <img alt="DomToImage" src="https://img.shields.io/badge/DomToImage-%232e1437"> y <img alt="FileSaver.Js" src="https://img.shields.io/badge/FileSaver-%23e7eed0"> podrás descargar tus memes en formato .png</p>
 
 
 <div align="center">
