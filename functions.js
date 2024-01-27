@@ -32,11 +32,13 @@ let darkMode = localStorage.getItem('darkMode') === 'true';
 const enableDarkMode = () => {
     document.body.classList.add('darkmode');
     localStorage.setItem('darkMode', true);
+    document.querySelector('#btn-darkmode').innerHTML = '<i class="fa-regular fa-sun btn-icon"></i> Modo Claro';
 }
   
 const disableDarkMode = () => {
     document.body.classList.remove('darkmode');
     localStorage.setItem('darkMode', false);
+    document.querySelector('#btn-darkmode').innerHTML = '<i class="fa-regular fa-moon btn-icon"></i> Modo Oscuro';
 }
   
 /*********************FUNCTIONS OF THE IMAGE MENU*************************/

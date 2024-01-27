@@ -24,6 +24,7 @@ darkModeToggle.addEventListener('click', () => {
 //    DOWNLOAD YOUR MEME
 
 document.getElementById("btn-download").addEventListener("click", downloadMeme);
+
 //                IMAGE MENU EVENTS
 
 //    ADD AN IMG FROM YOUR DEVICE
