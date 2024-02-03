@@ -4,7 +4,7 @@
   
 </div>
 
-<h1 align="center"><b>¡Preparate para esparcir el caos!</h1>
+<h1 align="center"><b>¡Prepárate para esparcir el caos!</h1>
 
 <div align="center">
   
