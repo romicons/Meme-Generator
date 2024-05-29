@@ -183,8 +183,8 @@
                             
                                 <div class="section-menu">
                                 <div>
-                                    <label for="top-text-input">
-                                        <h3>Superior</h3>
+                                    <label for="top-text-input" class="text-label">
+                                        Superior
                                     </label>
                                         <div class="one-input">
                                             <textarea aria-label="Texto superior" class="input-text text-container" id="top-text-input" placeholder="Ingresa tu texto aquí." tabindex="23"></textarea>
@@ -199,8 +199,8 @@
                                         </div>
                                     </div>
                                 <div>
-                                    <label for="bottom-text-input">
-                                        <h3>Inferior</h3>
+                                    <label for="bottom-text-input" class="text-label">
+                                        Inferior
                                     </label>
                                         <div class="one-input">
                                             <textarea aria-label="Texto inferior" class="input-text text-container" id="bottom-text-input" placeholder="Ingresa tu texto aquí." tabindex="25"></textarea>
@@ -219,20 +219,22 @@
                         <!--FONTS SECTION-->
 
                                 <div class="section-menu">
-                                        <label for="text-font-family">
-                                            <h3>Fuente</h3>
+                                        <label for="select-text-font-family" class="text-label">
+                                            Fuente
                                         </label>
                                         <div class="one-input">
                                             <select name="Font-family" id="select-text-font-family" class="panel-control-select" aria-label="Fuente del texto" tabindex="27">
+                                                <option value="Advent Pro">Advent Pro</option>
                                                 <option value="Arial">Arial</option>
                                                 <option value="Arial Black">Arial Black</option>
                                                 <option value="American Typewriter">American Typewriter</option>
                                                 <option value="Andale Mono">Andale Mono</option>
                                                 <option value="Comic Sans MS">Comic Sans MS</option>
                                                 <option value="Helvetica">Helvetica</option>
-                                                <option value="Impact" selected>Impact</option>
-                                                <option value="Verdana">Verdana</option>
+                                                <option value="Impact">Impact</option>
+                                                <option value="Rubik Doodle Shadow">Rubik Doodle Shadow</option>
                                                 <option value="Times New Roman">Times New Roman</option>
+                                                <option value="Verdana">Verdana</option>
                                             </select>
                                         </div>
                                 </div>
@@ -242,8 +244,8 @@
                                 <div class="section-menu">
                                         <div class="grid-cols-a">
                                             <div class="col-grid-1">
-                                                <label for="text-size-input">
-                                                    <h3>Tamaño</h3>
+                                                <label for="text-size-input" class="text-label">
+                                                    Tamaño
                                                 </label>
                                                     <input type="number" name="font-size" aria-label="Tamaño de fuente" id="text-size-input" min="9" max="60" value="30" tabindex="28">
                                             </div>
@@ -319,8 +321,8 @@
                                 <div class="section-menu">
                                         <div class="grid-cols-b">    
                                             <div class="col-grid-1">
-                                                <label for="padding-input">
-                                                    <h3>Espaciado</h3>
+                                                <label for="padding-input" class="text-label">
+                                                    Espaciado
                                                 </label>
                                                 <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50"
                                                 value="35" tabindex="38">
@@ -329,8 +331,8 @@
                         <!--LINE HEIGHT SECTION-->
                 
                                             <div class="col-grid-2">
-                                                <label for="line-height-select">
-                                                    <h3>Interlineado</h3>
+                                                <label for="line-height-select" class="text-label">
+                                                    Interlineado
                                                 </label>
                                                 <select id="line-height-select" class="panel-control-select" aria-label="Interlineado" tabindex="39">
                                                     <option value="0.8">0.8</option>
@@ -365,7 +367,9 @@
             <p class="design-by">© 2024 Romina Constantinoff. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script src="functions.js"></script>
+    <script src="main.js"></script>
+
 </body>
-<script src="functions.js"></script>
-<script src="main.js"></script>
 </html>
